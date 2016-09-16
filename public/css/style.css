@@ -1,0 +1,41 @@
+/* Overall styling - tweak attributes for built-in mark-up tags here */
+
+/* Div styling common to all pages */
+.header-container
+{
+}
+
+.header-container>.nav
+{
+}
+
+/* TODO Link should be un-clickable so page doesnt reload*/
+.header-container>.nav>.active
+{
+}
+
+.content-container
+{ 
+}
+
+.footer-container
+{ 
+}
+
+/* Should open a new tab */
+.footer-container>.linkedin
+{
+    text-decoration:none;
+}
+
+.footer-container>.linkedin>#linkedinimg
+{
+    width="80";
+    height="15";
+    alt="View Micaela Estabillo's LinkedIn profile";
+    vertical-align:middle;
+    border="0";
+}
+
+/* Styling for page-specific div elements */
+/* content-container may include either form(sign up or search or review) or table or map */
