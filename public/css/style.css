@@ -15,7 +15,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #dfd9e2; }
+  /*background-color: $grey;*/ }
   ul li {
     float: left; }
     ul li a {
@@ -27,7 +27,7 @@ ul {
     ul li a:hover {
       background-color: #b07156; }
     ul li .active {
-      background-color: #e6beae; }
+      background-color: #dfd9e2; }
 
 /* Div styling common to all pages */
 .header-container {

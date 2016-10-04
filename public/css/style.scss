@@ -28,7 +28,7 @@ ul
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: $grey;
+    /*background-color: $grey;*/
     
     li
     {
@@ -49,7 +49,7 @@ ul
 
         .active
         {
-            background-color: $orange;
+            background-color: $grey;
         }
     }
 }
