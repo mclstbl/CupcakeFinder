@@ -1,41 +1,65 @@
+/* RGB */
 /* Overall styling - tweak attributes for built-in mark-up tags here */
+body {
+  margin: 50px 100px 50px 100px;
+  background-color: antiquewhite;
+  opacity: 0.8;
+  font-family: trebuchet ms; }
+
+h1 h2 {
+  color: #000100; }
+
+/* Navigation bar attributes */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #dfd9e2; }
+  ul li {
+    float: left; }
+    ul li a {
+      display: block;
+      color: #000100;
+      text-align: center;
+      padding: 10px 20px;
+      text-decoration: none; }
+    ul li a:hover {
+      background-color: #b07156; }
+    ul li .active {
+      background-color: #e6beae; }
 
 /* Div styling common to all pages */
-.header-container
-{
-}
+.header-container {
+  background-color: #e6beae;
+  height: 150px;
+  display: -webkit-flex;
+  display: flex; }
 
-.header-container>.nav
-{
-}
+.header-container > .nav {
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap; }
 
 /* TODO Link should be un-clickable so page doesnt reload*/
-.header-container>.nav>.active
-{
-}
+.content-container {
+  height: 70vh;
+  background-color: #c799a6; }
 
-.content-container
-{ 
-}
-
-.footer-container
-{ 
-}
+.footer-container {
+  /*background-color: $orange;*/
+  height: 50px; }
 
 /* Should open a new tab */
-.footer-container>.linkedin
-{
-    text-decoration:none;
-}
+.footer-container > .linkedin {
+  text-decoration: none; }
 
-.footer-container>.linkedin>#linkedinimg
-{
-    width="80";
-    height="15";
-    alt="View Micaela Estabillo's LinkedIn profile";
-    vertical-align:middle;
-    border="0";
-}
+.footer-container > .linkedin > #linkedinimg {
+  width: 80;
+  height: 15;
+  alt: "View Micaela Estabillo's LinkedIn profile";
+  vertical-align: middle;
+  border: 0; }
 
 /* Styling for page-specific div elements */
-/* content-container may include either form(sign up or search or review) or table or map */
+
+/*# sourceMappingURL=style.css.map */
