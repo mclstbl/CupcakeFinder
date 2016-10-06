@@ -1,104 +1,142 @@
-/* RGB */
+/*
+Variable declarations
+*/
+
+/*
+Colour palette excluding white
+*/
 $grey: rgba(223, 217, 226, 1);
 $orange: rgba(230, 190, 174, 1);
 $black: rgba(0, 1, 0, 1);
 $pink: rgba(199, 153, 166, 1);
 $darkorange: rgba(176, 113, 86, 1);
 
+/* 
+Manually calculated menu buttons width and header height. These are needed in order to centre the nav buttons and position the header.
+TODO: Make this change dynamically
+*/
+$menubuttonwidth: 356.74px;
 $headerheight: 150px;
 
-/* Overall styling - tweak attributes for built-in mark-up tags here */
+/* 
+Common styling and layout for all pages
+*/
+
 body
 {
     margin: 50px 100px 50px 100px;
-    background-color: antiquewhite;
     opacity: 0.8;
     font-family: trebuchet ms;
 }
 
-h1 h2
+/*
+Header layout
+*/
+#header-container
 {
-    color: $black;
+    background-color: $grey;
+    height: $headerheight;
+
+    #headertitle
+    {
+        text-align: center;
+    }
+
+    #headersubtitle
+    {
+        text-align: center;
+    }
+
+    #nav
+    {
+    }
+
+    a
+    {
+        text-decoration: none;
+        color: $black;
+    }
+
+    h1
+    {
+        color: $black;
+    }
+
+    h2
+    {
+        color: $darkorange;
+    }
 }
 
-/* Navigation bar attributes */
-ul
+/*
+Navigation bar attributes
+*/
+#nav
 {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    /*background-color: $grey;*/
-    
-    li
-    {
-        float: left;
-        a
-        {
-            display: block;
-            color: $black;
-            text-align: center;
-            padding: 10px 20px;
-            text-decoration: none;
-        }
-        
-        a:hover
-        {
-            background-color: $darkorange;
-        }
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    border-top: 1px white solid;
+    border-bottom: 1px white solid;
 
-        .active
+    ul
+    {
+        list-style-type: none;
+        padding: 0;
+        overflow: hidden;
+        width: $menubuttonwidth;
+        margin: auto;
+        
+        li
         {
-            background-color: $grey;
+            float: left;
+
+            a
+            {
+                display: block;
+                color: $black;
+                text-align: center;
+                padding: 10px 20px;
+                text-decoration: none;
+            }
+            
+            a:hover
+            {
+                background-color: $orange;
+            }
+
+            #active
+            {
+                text-decoration: underline;
+                background-color: $pink;
+            }
         }
     }
 }
 
-/* Div styling common to all pages */
-.header-container
+#footer-container
 {
-    background-color: $orange;
-    height: $headerheight;
-    display: -webkit-flex;
-    display: flex;
+    height: 50px;
+
+    #linkedin
+    {
+        text-decoration:none;
+
+        #linkedinimg
+        {
+            width: 80;
+            height: 15;
+            alt: "View Micaela Estabillo's LinkedIn profile";
+            vertical-align: middle;
+            border: 0;
+        }
+    }
 }
 
-.header-container>.nav
-{
-    -webkit-flex-flow: row wrap;
-    flex-flow: row wrap;
-}
-
-/* TODO Link should be un-clickable so page doesnt reload*/
-.header-container>.nav>.active
-{
-}
-
-.content-container
+/*
+Styling for page-specific div elements: the content-container div may contain sub-divs but after this point, it should be the only section that changes for each page type. All other page attributes should be uniform.
+*/
+#content-container
 {
     height: 70vh;
-    background-color: $pink;
+    background-color: $grey;
 }
-
-.footer-container
-{
-    /*background-color: $orange;*/
-    height: 50px;
-}
-
-/* Should open a new tab */
-.footer-container>.linkedin
-{
-    text-decoration:none;
-}
-
-.footer-container>.linkedin>#linkedinimg
-{
-    width: 80;
-    height: 15;
-    alt: "View Micaela Estabillo's LinkedIn profile";
-    vertical-align: middle;
-    border: 0;
-}
-
-/* Styling for page-specific div elements */

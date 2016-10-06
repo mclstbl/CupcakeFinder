@@ -1,65 +1,83 @@
-/* RGB */
-/* Overall styling - tweak attributes for built-in mark-up tags here */
+/*
+Variable declarations
+*/
+/*
+Colour palette excluding white
+*/
+/* 
+Manually calculated menu buttons width and header height. These are needed in order to centre the nav buttons and position the header.
+TODO: Make this change dynamically
+*/
+/* 
+Common styling and layout for all pages
+*/
 body {
   margin: 50px 100px 50px 100px;
-  background-color: antiquewhite;
   opacity: 0.8;
   font-family: trebuchet ms; }
 
-h1 h2 {
-  color: #000100; }
+/*
+Header layout
+*/
+#header-container {
+  background-color: #dfd9e2;
+  height: 150px; }
+  #header-container #headertitle {
+    text-align: center; }
+  #header-container #headersubtitle {
+    text-align: center; }
+  #header-container a {
+    text-decoration: none;
+    color: #000100; }
+  #header-container h1 {
+    color: #000100; }
+  #header-container h2 {
+    color: #b07156; }
 
-/* Navigation bar attributes */
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  /*background-color: $grey;*/ }
-  ul li {
-    float: left; }
-    ul li a {
-      display: block;
-      color: #000100;
-      text-align: center;
-      padding: 10px 20px;
-      text-decoration: none; }
-    ul li a:hover {
-      background-color: #b07156; }
-    ul li .active {
-      background-color: #dfd9e2; }
-
-/* Div styling common to all pages */
-.header-container {
-  background-color: #e6beae;
-  height: 150px;
-  display: -webkit-flex;
-  display: flex; }
-
-.header-container > .nav {
+/*
+Navigation bar attributes
+*/
+#nav {
   -webkit-flex-flow: row wrap;
-  flex-flow: row wrap; }
+  flex-flow: row wrap;
+  border-top: 1px white solid;
+  border-bottom: 1px white solid; }
+  #nav ul {
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    width: 356.74px;
+    margin: auto; }
+    #nav ul li {
+      float: left; }
+      #nav ul li a {
+        display: block;
+        color: #000100;
+        text-align: center;
+        padding: 10px 20px;
+        text-decoration: none; }
+      #nav ul li a:hover {
+        background-color: #e6beae; }
+      #nav ul li #active {
+        text-decoration: underline;
+        background-color: #c799a6; }
 
-/* TODO Link should be un-clickable so page doesnt reload*/
-.content-container {
-  height: 70vh;
-  background-color: #c799a6; }
-
-.footer-container {
-  /*background-color: $orange;*/
+#footer-container {
   height: 50px; }
+  #footer-container #linkedin {
+    text-decoration: none; }
+    #footer-container #linkedin #linkedinimg {
+      width: 80;
+      height: 15;
+      alt: "View Micaela Estabillo's LinkedIn profile";
+      vertical-align: middle;
+      border: 0; }
 
-/* Should open a new tab */
-.footer-container > .linkedin {
-  text-decoration: none; }
-
-.footer-container > .linkedin > #linkedinimg {
-  width: 80;
-  height: 15;
-  alt: "View Micaela Estabillo's LinkedIn profile";
-  vertical-align: middle;
-  border: 0; }
-
-/* Styling for page-specific div elements */
+/*
+Styling for page-specific div elements: the content-container div may contain sub-divs but after this point, it should be the only section that changes for each page type. All other page attributes should be uniform.
+*/
+#content-container {
+  height: 70vh;
+  background-color: #dfd9e2; }
 
 /*# sourceMappingURL=style.css.map */
