@@ -4,11 +4,12 @@
         <title>Donation Box Finder | Search</title>
         <link rel="stylesheet" href="public/css/style.css">
         <meta charset="utf-8">
-        <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Food_Bank_icon.svg/2000px-Food_Bank_icon.svg.png">
+        <link rel="icon" href="public/images/logo.png">
     </head>
     <body>
         <div id="header-container">
             <h1 id="headertitle"><a href="index.html" >Donation Box Finder</a></h1>
+            <!--img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Food_Bank_icon.svg/2000px-Food_Bank_icon.svg.png" alt="Site logo""-->
             <h2 id="headersubtitle">Find donation centres near you</h2>
             <div id="nav">
                 <ul>
@@ -25,13 +26,22 @@
                 <h3>Start your search here</h3>
                 <form id="search" action="public/results.html#results">
                     <div id="options">
-                        <label for="donate">Donate </label>
+                        Donate 
                         <label><input id="clothing" type="checkbox" value="clothing"> Clothing</label>
                         <label><input id="electronics" type="checkbox" value="electronics"> Electronics</label>
                         <label><input id="food" type="checkbox" value="food"> Food</label> <br>
+                        
+                       <label>Minimum Rating 
+                           <select id="rating" name="starlist">
+                              <option value="five">☆☆☆☆☆</option>
+                              <option value="four">☆☆☆☆</option>
+                              <option value="three">☆☆☆</option>
+                              <option value="two">☆☆</option>
+                              <option value="one">☆</option>
+                            </select>
+                        </label> <br>
 
-                        <label for="near">Near</label>
-                        <input id="location" type="text" name="location" placeholder="My location">
+                        <label>Near <input id="location" type="text" name="location" placeholder="My location"></label>
                     </div>
                     <input type="submit" value="Search">
                 </form>
@@ -40,9 +50,7 @@
 
         <div id="footer-container">
             <footer>
-                <a id="linkedin" href="https://ca.linkedin.com/pub/micaela-estabillo/6a/468/190">
-                    <img id="linkedinimg" src="http://s.c.lnkd.licdn.com/scds/common/u/img/webpromo/btn_profile_bluetxt_80x15.png">
-                </a>
+                Micaela Estabillo's CS 4WW3 Project
             </footer>
         </div>
     </body>
