@@ -1,0 +1,66 @@
+@import 'variables';
+
+/******************************************************
+Styling for content div of individual_sample.html
+******************************************************/
+#individual-result
+{
+    height: 100%;
+    background-color: $grey;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+
+    input
+    {
+        outline: none;
+    }
+        
+    #search
+    {
+        background-color: rgba(255,255,250,0.3);
+        width: 60%;
+        margin: 0 auto;
+
+        #options
+        {
+            margin: 0 auto;
+            text-align: left;
+
+            label
+            {
+                font-weight: bold;
+            }
+
+            input[type=text]
+            {
+                width: 80%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: none;
+                border-radius: 0px;
+                box-sizing: border-box;
+            }
+        }
+
+        input[type=submit]
+        {
+            background-color: $orange;
+            color: $black;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 0px;
+            cursor: pointer;
+            font-weight: bold
+        }
+
+        input[type=submit]:hover
+        {
+            background-color: $darkorange;
+            border: none;
+        }
+    }
+}

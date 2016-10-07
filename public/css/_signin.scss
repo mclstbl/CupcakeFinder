@@ -1,0 +1,37 @@
+@import 'variables';
+
+/******************************************************
+Styling for content div of signin.html
+******************************************************/
+#registration-content
+{
+    height: 100%;
+    background-color: $grey;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+        
+    #sign-in
+    {
+        padding: 10px;
+        background-color: rgba(255,255,250,0.3);
+        width: $boxwidth;
+        margin: 0 auto;
+    }
+
+    input[type=submit]
+    {
+        background-color: $orange;
+        color: $black;
+        padding: 14px 20px;
+        margin: 8px 0;
+        cursor: pointer;
+        font-weight: bold
+    }
+
+    input[type=submit]:hover
+    {
+        background-color: $darkorange;
+    }
+}
