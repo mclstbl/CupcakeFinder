@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Donation Box Finder | Search Results</title>
+        <link rel="stylesheet" href="css/style.css">
+        <meta charset="utf-8">
+        <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Food_Bank_icon.svg/2000px-Food_Bank_icon.svg.png">
+    </head>
+    <body>
+        <div id="header-container">
+            <h1 id="headertitle"><a href="../index.html">Donation Box Finder</a></h1>
+            <h2 id="headersubtitle">Find donation centres near you</h2>
+            <div id="nav">
+                <ul>
+                    <li><a class="menubutton" id="active" href="../index.html">Home</a></li>
+                    <li><a class="menubutton" href="submission.html">Submit</a></li>
+                    <li><a class="menubutton" href="registration.html">Register</a></li>
+                    <li><a class="menubutton" href="signin.html">Sign in</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="content-container">
+            <div id="results-content">
+                <div id="mini-search">
+                    <form id="search" action="#">
+                        <label for="donate">Donate </label>
+                        <label><input id="clothing" type="checkbox" value="clothing"> Clothing</label>
+                        <label><input id="electronics" type="checkbox" value="electronics"> Electronics</label>
+                        <label><input id="food" type="checkbox" value="food"> Food</label> <br>
+
+                        <label for="near">Near</label>
+                        <input id="near" type="text" name="location" placeholder="My location">
+                        <input type="submit" value="Search">
+                    </form>
+                </div>
+                <div id="list">
+                <a name="results">
+                <h3>Search results</h3>
+                    <h4>Click name to see details</h4>
+                    <ol class="hits">
+                        <li>
+                            <a href="individual.html">The Salvation Army</a>
+                            
+                            <div class="left">
+                                <div class="review">
+                                    <div class="stars">
+                                        ☆☆☆☆☆
+                                        <div class="numberofreviews">
+                                            150 reviews
+                                        </div>
+                                    </div>
+                                    <ul class="types">
+                                        <li>Clothing</li>
+                                        <li>Electronics</li>
+                                        <li>Food</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="right">
+                                <p id="address">1280 Main Street West, Hamilton ON L8S2R2</p>
+                            </div>
+
+                            <div class="bottom">
+                                <p id="topcomment"> "The red box is big and fits all of my unwanted stuff"</p>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="individual.html">Goodwill Donation Centre</a>
+                            
+                            <div class="left">
+                                <div class="review">
+                                    <div class="stars">
+                                        ☆☆☆☆☆
+                                        <div class="numberofreviews">
+                                            100 reviews
+                                        </div>
+                                    </div>
+                                    <ul class="types">
+                                        <li>Clothing</li>
+                                        <li>Electronics</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="right">
+                                <p id="address">90 Glenmount Avenue, Hamilton ON L8S2R2</p>
+                            </div>
+
+                            <div class="bottom">
+                                <p id="topcomment"> "Much wow"</p>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="individual.html">Good Shepherd</a>
+                            
+                            <div class="left">
+                                <div class="review">
+                                    <div class="stars">
+                                        ☆☆☆☆☆
+                                        <div class="numberofreviews">
+                                            42 reviews
+                                        </div>
+                                    </div>
+                                    <ul class="types">
+                                        <li>Clothing</li>
+                                        <li>Food</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="right">
+                                <p id="address">2 Gary Avenue, Hamilton ON L8S2R2</p>
+                            </div>
+
+                            <div class="bottom">
+                                <p id="topcomment"> "They have a recycling bin which helps me sort my giveaways"</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+
+                <div id="map">
+                    <img id="google-map" src="images/map.png" alt="Map of donation centres">
+                </div>
+            </div>
+        </div>
+
+        <div id="footer-container">
+            <footer>
+                <a id="linkedin" href="https://ca.linkedin.com/pub/micaela-estabillo/6a/468/190">
+                    <img id="linkedinimg" src="http://s.c.lnkd.licdn.com/scds/common/u/img/webpromo/btn_profile_bluetxt_80x15.png">
+                </a>
+            </footer>
+        </div>
+    </body>
+</html>
