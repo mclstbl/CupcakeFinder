@@ -15,12 +15,33 @@
                     <li><a class="menubutton" href="../index.html">Home</a></li>
                     <li><a class="menubutton" id="active" href="submission.html">Submit</a></li>
                     <li><a class="menubutton" href="registration.html">Register</a></li>
-                    <li><a class="menubutton" href="#">About</a></li>
+                    <li><a class="menubutton" href="signin.html">Sign in</a></li>
                 </ul>
             </div>
         </div>
         
         <div id="content-container">
+            <div id="submission-content">
+                <h3>Submit a donation centre location</h3>
+                <div id="newobject">
+                    <form>
+                        <input id="name" type="text" placeholder="Name of donation centre" required><br>
+                        <input id "description" placeholder="Description">
+
+                        <input id="latitude" type="number" placeholder="Latitude position">
+                        <input id="longitude" type="number" placeholder="Longitude position"><br>
+                        
+                        Accepts
+                        <label><input id="clothing" type="checkbox" value="clothing">Clothing</label>
+                        <label><input id="electronics" type="checkbox" value="electronics"> Electronics</label>
+                        <label><input id="food" type="checkbox" value="food"> Food</label> <br>
+                        
+                        <input id="image" type="file" accept="image/*">
+
+                        <input id="submit" type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
         </div>
 
         <div id="footer-container">

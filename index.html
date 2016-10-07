@@ -15,24 +15,27 @@
                     <li><a class="menubutton" id="active" href="index.html">Home</a></li>
                     <li><a class="menubutton" href="public/submission.html">Submit</a></li>
                     <li><a class="menubutton" href="public/registration.html">Register</a></li>
-                    <li><a class="menubutton" href="#">About</a></li>
+                    <li><a class="menubutton" href="public/signin.html">Sign in</a></li>
                 </ul>
             </div>
         </div>
         
         <div id="content-container">
-            <form id="search" action="public/results_sample.html">
-                <div id="options">
-                    <label for="donate">Donate </label>
-                    <input id="clothing" type="checkbox" value="clothing">Clothing
-                    <input id="electronics" type="checkbox" value="electronics">Electronics
-                    <input id="food" type="checkbox" value="food">Food <br>
+            <div id="search-content">
+                <h3>Start your search here</h3>
+                <form id="search" action="public/results_sample.html#results">
+                    <div id="options">
+                        <label for="donate">Donate </label>
+                        <label><input id="clothing" type="checkbox" value="clothing"> Clothing</label>
+                        <label><input id="electronics" type="checkbox" value="electronics"> Electronics</label>
+                        <label><input id="food" type="checkbox" value="food"> Food</label> <br>
 
-                    <label for="near">Near</label>
-                    <input id="location" type="text" name="location" value="My location">
-                </div>
-                <input type="submit" value="Search">
-            </form>
+                        <label for="near">Near</label>
+                        <input id="location" type="text" name="location" placeholder="My location">
+                    </div>
+                    <input type="submit" value="Search">
+                </form>
+            </div>
         </div>
 
         <div id="footer-container">
