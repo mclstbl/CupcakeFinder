@@ -1,0 +1,191 @@
+@import 'variables';
+
+/******************************************************
+Styling for content div of results.html
+******************************************************/
+#results-content
+{
+    height: 100%;
+    background-color: $grey;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+
+    #mini-search
+    {
+        padding-bottom: 20px;
+
+        #search
+        {
+            padding: 10px;
+            background-color: rgba(255,255,250,0.3);
+            width: $boxwidth;
+            margin: 0 auto;
+            text-align: left;
+
+            label
+            {
+                font-weight: bold;
+            }
+
+            input[type=checkbox]
+            {
+                width: 10px;
+            }
+            
+            input #near
+            {
+                float: right;
+            }
+            
+            input[type=submit]
+            {
+                background-color: $orange;
+                color: $black;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 0px;
+                cursor: pointer;
+                font-weight: bold;
+                width: $boxwidth;
+            }
+
+            input[type=submit]:hover
+            {
+                background-color: $darkorange;
+                border: none;
+            }
+        }
+    }
+
+    #list
+    {
+        clear: left;
+        padding: 10px;
+        background-color: rgba(255,255,250,0.3);
+        width: 45%;
+        float: left;
+        text-align: left;
+        height: 60%;
+
+        ol
+        {
+            margin: auto;
+            li
+            {
+                a
+                {
+                    display: block;
+                    color: $black;
+                    text-decoration: underline;
+                    font-weight: bold;
+                }
+                
+                a:hover
+                {
+                    position: relative;
+                    font-style: italic;
+                }
+
+                .left
+                {
+                    float: left;
+                    width: 30%;
+
+                    .review
+                    {
+                        .stars
+                        {
+                            float: left;
+                        }
+
+
+                        .numberofreviews
+                        {
+                            float: left;
+                            
+                            p
+                            {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+
+                    ul
+                    {
+                        font-size: 10px;
+                        display: inline;
+                        list-style: none;
+                        padding: 0;
+                        list-style-type: none;
+
+                        li
+                        {
+                            display: inline;
+                        }
+
+                        li:after
+                        {
+                            content: ",";
+                        }
+
+                        li:last-child:after
+                        {
+                            content: "";
+                        }
+                    }
+
+                    .types
+                    {
+                    }
+                }
+
+                .right
+                {
+                    position: relative;
+                    float: right;
+                    width: 40%;
+
+                    p
+                    {
+                        font-size: 14px;
+                    }
+
+                    .address
+                    {
+
+                    }
+                }
+
+                .bottom
+                {
+                    clear: both;
+                    width: 100%;
+
+                    p
+                    {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+    #map
+    {
+        float: right;
+        padding: 10px;
+        background-color: rgba(255,255,250,0.3);
+        width: 45%;
+        margin: 0 auto;
+        overflow: hidden;
+        height: 60%;
+
+        #google-map
+        {
+            height:400px;
+        }
+    }
+}

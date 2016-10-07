@@ -99,6 +99,9 @@ page type. All other page attributes should be uniform.
   /******************************************************
   Styling for content div of index.html a.k.a
   search or home page
+  ******************************************************/
+  /******************************************************
+  Styling for content div of results.html
   ******************************************************/ }
   #content-container input {
     outline: none;
@@ -136,7 +139,8 @@ page type. All other page attributes should be uniform.
         border: none;
         border-radius: 0px;
         cursor: pointer;
-        font-weight: bold; }
+        font-weight: bold;
+        width: 356.74px; }
       #content-container #search-content #search input[type=submit]:hover {
         background-color: rgba(176, 113, 86, 0.9);
         border: none; }
@@ -261,5 +265,99 @@ page type. All other page attributes should be uniform.
       #content-container #submission-content #newobject input[type=submit]:hover {
         background-color: rgba(176, 113, 86, 0.9);
         border: none; }
+  #content-container #results-content {
+    height: 100%;
+    background-color: rgba(223, 217, 226, 0.7);
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px; }
+    #content-container #results-content #mini-search {
+      padding-bottom: 20px; }
+      #content-container #results-content #mini-search #search {
+        padding: 10px;
+        background-color: rgba(255, 255, 250, 0.3);
+        width: 356.74px;
+        margin: 0 auto;
+        text-align: left; }
+        #content-container #results-content #mini-search #search label {
+          font-weight: bold; }
+        #content-container #results-content #mini-search #search input[type=checkbox] {
+          width: 10px; }
+        #content-container #results-content #mini-search #search input #near {
+          float: right; }
+        #content-container #results-content #mini-search #search input[type=submit] {
+          background-color: rgba(230, 190, 174, 0.8);
+          color: #000100;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          border-radius: 0px;
+          cursor: pointer;
+          font-weight: bold;
+          width: 356.74px; }
+        #content-container #results-content #mini-search #search input[type=submit]:hover {
+          background-color: rgba(176, 113, 86, 0.9);
+          border: none; }
+    #content-container #results-content #list {
+      clear: left;
+      padding: 10px;
+      background-color: rgba(255, 255, 250, 0.3);
+      width: 45%;
+      float: left;
+      text-align: left;
+      height: 60%; }
+      #content-container #results-content #list ol {
+        margin: auto; }
+        #content-container #results-content #list ol li a {
+          display: block;
+          color: #000100;
+          text-decoration: underline;
+          font-weight: bold; }
+        #content-container #results-content #list ol li a:hover {
+          position: relative;
+          font-style: italic; }
+        #content-container #results-content #list ol li .left {
+          float: left;
+          width: 30%; }
+          #content-container #results-content #list ol li .left .review .stars {
+            float: left; }
+          #content-container #results-content #list ol li .left .review .numberofreviews {
+            float: left; }
+            #content-container #results-content #list ol li .left .review .numberofreviews p {
+              font-size: 14px; }
+          #content-container #results-content #list ol li .left ul {
+            font-size: 10px;
+            display: inline;
+            list-style: none;
+            padding: 0;
+            list-style-type: none; }
+            #content-container #results-content #list ol li .left ul li {
+              display: inline; }
+            #content-container #results-content #list ol li .left ul li:after {
+              content: ","; }
+            #content-container #results-content #list ol li .left ul li:last-child:after {
+              content: ""; }
+        #content-container #results-content #list ol li .right {
+          position: relative;
+          float: right;
+          width: 40%; }
+          #content-container #results-content #list ol li .right p {
+            font-size: 14px; }
+        #content-container #results-content #list ol li .bottom {
+          clear: both;
+          width: 100%; }
+          #content-container #results-content #list ol li .bottom p {
+            font-size: 12px; }
+    #content-container #results-content #map {
+      float: right;
+      padding: 10px;
+      background-color: rgba(255, 255, 250, 0.3);
+      width: 45%;
+      margin: 0 auto;
+      overflow: hidden;
+      height: 60%; }
+      #content-container #results-content #map #google-map {
+        height: 400px; }
 
 /*# sourceMappingURL=style.css.map */
