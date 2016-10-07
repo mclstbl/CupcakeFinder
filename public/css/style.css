@@ -1,52 +1,4 @@
 /******************************************************
-Variables for CSS generation using Sass
-******************************************************/
-/******************************************************
-Variables for CSS generation using Sass
-******************************************************/
-/******************************************************
-Styling for content div of index.html a.k.a
-search or home page
-******************************************************/
-#content-container {
-  height: 70vh;
-  background-color: rgba(223, 217, 226, 0.7);
-  position: relative;
-  margin: 0 auto;
-  text-align: center; }
-  #content-container input {
-    outline: none; }
-  #content-container #search {
-    background-color: rgba(255, 255, 250, 0.3);
-    width: 60%;
-    margin: 0 auto; }
-    #content-container #search #options {
-      margin: 0 auto;
-      text-align: left; }
-      #content-container #search #options label {
-        font-weight: bold; }
-      #content-container #search #options input[type=text] {
-        width: 80%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: none;
-        border-radius: 0px;
-        box-sizing: border-box; }
-    #content-container #search input[type=submit] {
-      background-color: rgba(230, 190, 174, 0.8);
-      color: #000100;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      border-radius: 0px;
-      cursor: pointer;
-      font-weight: bold; }
-    #content-container #search input[type=submit]:hover {
-      background-color: rgba(176, 113, 86, 0.9);
-      border: none; }
-
-/******************************************************
 This CSS file was generated from style.scss using Sass.
 ******************************************************/
 /******************************************************
@@ -63,11 +15,12 @@ Header layout
 #header-container {
   position: relative;
   background-color: rgba(223, 217, 226, 0.7);
-  height: 150px;
+  height: 160px;
   /*
   Navigation bar attributes
   */ }
   #header-container #headertitle {
+    padding-top: 10px;
     text-align: center; }
   #header-container #headersubtitle {
     text-align: center; }
@@ -111,7 +64,8 @@ Footer layout
 ******************************************************/
 #footer-container {
   height: 50px;
-  position: relative; }
+  position: absolute;
+  padding-top: 40px; }
   #footer-container #linkedin {
     text-decoration: none; }
     #footer-container #linkedin #linkedinimg {
@@ -127,5 +81,185 @@ container div may contain sub-divs but after this point
 it should be the only section that changes for each 
 page type. All other page attributes should be uniform.
 ******************************************************/
+#content-container {
+  height: 1000px;
+  /******************************************************
+  Styling for content div of index.html a.k.a
+  search or home page
+  ******************************************************/
+  /******************************************************
+  Styling for content div of registration.html
+  ******************************************************/
+  /******************************************************
+  Styling for content div of individual_sample.html
+  ******************************************************/
+  /******************************************************
+  Styling for content div of signin.html
+  ******************************************************/
+  /******************************************************
+  Styling for content div of index.html a.k.a
+  search or home page
+  ******************************************************/ }
+  #content-container input {
+    outline: none;
+    border: none;
+    border-radius: 0px;
+    padding: 10px;
+    width: 80%;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box; }
+  #content-container #search-content {
+    height: 100%;
+    background-color: rgba(223, 217, 226, 0.7);
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px; }
+    #content-container #search-content #search {
+      padding: 10px;
+      background-color: rgba(255, 255, 250, 0.3);
+      width: 356.74px;
+      margin: 0 auto; }
+      #content-container #search-content #search #options {
+        margin: 0 auto;
+        text-align: left; }
+        #content-container #search-content #search #options label {
+          font-weight: bold; }
+        #content-container #search-content #search #options input[type=checkbox] {
+          width: 10px; }
+      #content-container #search-content #search input[type=submit] {
+        background-color: rgba(230, 190, 174, 0.8);
+        color: #000100;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 0px;
+        cursor: pointer;
+        font-weight: bold; }
+      #content-container #search-content #search input[type=submit]:hover {
+        background-color: rgba(176, 113, 86, 0.9);
+        border: none; }
+  #content-container #registration-content {
+    height: 100%;
+    background-color: rgba(223, 217, 226, 0.7);
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px; }
+    #content-container #registration-content #sign-up {
+      padding: 10px;
+      background-color: rgba(255, 255, 250, 0.3);
+      width: 356.74px;
+      margin: 0 auto; }
+    #content-container #registration-content input[type=submit] {
+      background-color: rgba(230, 190, 174, 0.8);
+      color: #000100;
+      padding: 14px 20px;
+      margin: 8px 0;
+      cursor: pointer;
+      font-weight: bold; }
+    #content-container #registration-content input[type=submit]:hover {
+      background-color: rgba(176, 113, 86, 0.9); }
+  #content-container #individual-result {
+    height: 100%;
+    background-color: rgba(223, 217, 226, 0.7);
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px; }
+    #content-container #individual-result input {
+      outline: none; }
+    #content-container #individual-result #search {
+      background-color: rgba(255, 255, 250, 0.3);
+      width: 60%;
+      margin: 0 auto; }
+      #content-container #individual-result #search #options {
+        margin: 0 auto;
+        text-align: left; }
+        #content-container #individual-result #search #options label {
+          font-weight: bold; }
+        #content-container #individual-result #search #options input[type=text] {
+          width: 80%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: none;
+          border-radius: 0px;
+          box-sizing: border-box; }
+      #content-container #individual-result #search input[type=submit] {
+        background-color: rgba(230, 190, 174, 0.8);
+        color: #000100;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 0px;
+        cursor: pointer;
+        font-weight: bold; }
+      #content-container #individual-result #search input[type=submit]:hover {
+        background-color: rgba(176, 113, 86, 0.9);
+        border: none; }
+  #content-container #registration-content {
+    height: 100%;
+    background-color: rgba(223, 217, 226, 0.7);
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px; }
+    #content-container #registration-content #sign-in {
+      padding: 10px;
+      background-color: rgba(255, 255, 250, 0.3);
+      width: 356.74px;
+      margin: 0 auto; }
+    #content-container #registration-content input[type=submit] {
+      background-color: rgba(230, 190, 174, 0.8);
+      color: #000100;
+      padding: 14px 20px;
+      margin: 8px 0;
+      cursor: pointer;
+      font-weight: bold; }
+    #content-container #registration-content input[type=submit]:hover {
+      background-color: rgba(176, 113, 86, 0.9); }
+  #content-container #submission-content {
+    height: 100%;
+    background-color: rgba(223, 217, 226, 0.7);
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px; }
+    #content-container #submission-content #newobject {
+      padding: 10px;
+      background-color: rgba(255, 255, 250, 0.3);
+      width: 356.74px;
+      margin: 0 auto; }
+      #content-container #submission-content #newobject input#latitude, #content-container #submission-content #newobject input#longitude {
+        width: 140px; }
+      #content-container #submission-content #newobject input#image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        cursor: pointer;
+        opacity: 0;
+        filter: alpha(opacity=0); }
+      #content-container #submission-content #newobject label {
+        text-align: left;
+        font-weight: bold; }
+      #content-container #submission-content #newobject input[type=checkbox] {
+        width: 10px; }
+      #content-container #submission-content #newobject input[type=submit] {
+        background-color: rgba(230, 190, 174, 0.8);
+        color: #000100;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 0px;
+        cursor: pointer;
+        font-weight: bold; }
+      #content-container #submission-content #newobject input[type=submit]:hover {
+        background-color: rgba(176, 113, 86, 0.9);
+        border: none; }
 
 /*# sourceMappingURL=style.css.map */

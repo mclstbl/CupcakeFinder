@@ -1,5 +1,4 @@
 @import 'variables';
-@import 'index';
 
 /******************************************************
 This CSS file was generated from style.scss using Sass.
@@ -27,6 +26,7 @@ Header layout
 
     #headertitle
     {
+        padding-top: 10px;
         text-align: center;
     }
 
@@ -105,7 +105,8 @@ Footer layout
 #footer-container
 {
     height: 50px;
-    position: relative;
+    position: absolute;
+    padding-top: 40px;
 
     #linkedin
     {
@@ -128,3 +129,25 @@ container div may contain sub-divs but after this point
 it should be the only section that changes for each 
 page type. All other page attributes should be uniform.
 ******************************************************/
+#content-container
+{
+    height: 1000px;
+
+    input
+    {
+        outline: none;
+        border: none;
+        border-radius: 0px;
+        padding: 10px;
+        width: 80%;
+        margin: 8px 0;
+        display: inline-block;
+        box-sizing: border-box;
+    }
+    
+    @import 'index';
+    @import 'registration';
+    @import 'individual';
+    @import 'signin';
+    @import 'submission';
+}
