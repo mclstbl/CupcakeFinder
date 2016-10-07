@@ -1,17 +1,20 @@
 @import 'variables';
 
-/******************************************************
-Styling for content div of signin.html
-******************************************************/
-#registration-content
+#signin-content
 {
-    height: 100%;
+/*
+The signin CSS is very similar to the registration
+layout (see comments for registration-content),
+but it has less attributes since there are less 
+input areas.
+*/
+    height: 960px;
     background-color: $grey;
     position: relative;
     margin: 0 auto;
     text-align: center;
     padding: 20px;
-        
+
     #sign-in
     {
         padding: 10px;

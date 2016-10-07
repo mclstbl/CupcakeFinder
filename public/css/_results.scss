@@ -1,19 +1,27 @@
 @import 'variables';
 
-/******************************************************
-Styling for content div of results.html
-******************************************************/
 #results-content
 {
-    height: 100%;
+/*
+The height of the results container is always 960px
+but in case there are many results, the contents
+just scroll so that they fit.
+*/
+    height: 960px;
     background-color: $grey;
     position: relative;
     margin: 0 auto;
     text-align: center;
     padding: 20px;
+    overflow: scroll;
 
     #mini-search
     {
+/*
+The search bar is also available in the results page
+in case the search needs to be updated. It uses the
+same layout as the search page (index.html)
+*/
         padding-bottom: 20px;
 
         #search
@@ -38,7 +46,7 @@ Styling for content div of results.html
             {
                 float: right;
             }
-            
+
             input[type=submit]
             {
                 background-color: $orange;
@@ -60,21 +68,49 @@ Styling for content div of results.html
         }
     }
 
+/*
+The search results are presented as a list. An
+ordered list HTML element is used to represent it.
+The results page is divided into two columns (list
+and map).
+*/
     #list
     {
+/*
+The list div is on the left side of the page.
+*/
         clear: left;
         padding: 10px;
         background-color: rgba(255,255,250,0.3);
         width: 45%;
         float: left;
         text-align: left;
-        height: 60%;
+        bottom: 20px;
+        top: 200px;
+        position: absolute;
+        height: 100%;
+        bottom: 20px;
+        margin-bottom: 20px;
 
         ol
         {
             margin: auto;
+/*
+The list elements have been styled to contain an
+image, stars and comments. The following lines
+all serve to arrange the various contained element
+types.
+*/
             li
             {
+                img
+                {
+                    float:left;
+                    width: 90px;
+                    height: 90px;
+                    margin-right: 30px;
+                }
+
                 a
                 {
                     display: block;
@@ -175,13 +211,21 @@ Styling for content div of results.html
 
     #map
     {
+/*
+The map div contains the Google map. It is on the
+right side of the page
+*/
+        top: 200px;
+        right: 20px;
+        bottom: 20px;
+        position: absolute;
         float: right;
         padding: 10px;
         background-color: rgba(255,255,250,0.3);
         width: 45%;
         margin: 0 auto;
         overflow: hidden;
-        height: 60%;
+        height: 100%;  
 
         #google-map
         {

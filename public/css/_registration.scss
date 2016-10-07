@@ -1,25 +1,37 @@
 @import 'variables';
 
-/******************************************************
-Styling for content div of registration.html
-******************************************************/
 #registration-content
 {
-    height: 100%;
+/*
+The registration page contains a form with various
+HTML5 input types. It follows the same formatting
+as the forms in the search, signing and submission
+pages.
+*/
+    height: 960px;
     background-color: $grey;
     position: relative;
     margin: 0 auto;
     text-align: center;
     padding: 20px;
-        
+
     #sign-up
     {
+/*
+The sign-up div is gives the form a lighter outline
+than the rest of the page (see background-color)
+*/
         padding: 10px;
         background-color: rgba(255,255,250,0.3);
         width: $boxwidth;
         margin: 0 auto;
     }
-
+/*
+The submit input type is orange and is formatted a
+little differently from the other input fields,
+mainly because it is not a text input area but is a
+button.
+*/
     input[type=submit]
     {
         background-color: $orange;
@@ -29,7 +41,20 @@ Styling for content div of registration.html
         cursor: pointer;
         font-weight: bold
     }
-
+/*
+The -webkit-datetime-edit-text is used here to
+remove the up and down arrows inside the date
+selector field.
+*/    
+    input[type=date]::-webkit-inner-spin-button
+    {
+        display: none;
+    }
+/*
+The submit button turns dark orange on hover in
+order to give the user feedback and to show
+that it is a clickable link.
+*/
     input[type=submit]:hover
     {
         background-color: $darkorange;

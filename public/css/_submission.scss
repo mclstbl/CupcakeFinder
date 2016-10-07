@@ -1,18 +1,14 @@
 @import 'variables';
 
-/******************************************************
-Styling for content div of index.html a.k.a
-search or home page
-******************************************************/
 #submission-content
 {
-    height: 100%;
+    height: 960px;
     background-color: $grey;
     position: relative;
     margin: 0 auto;
     text-align: center;
     padding: 20px;
-        
+
     #newobject
     {
         padding: 10px;

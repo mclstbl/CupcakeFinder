@@ -1,66 +1,137 @@
 @import 'variables';
 
-/******************************************************
-Styling for content div of individual_sample.html
-******************************************************/
-#individual-result
+#individual-content
 {
-    height: 100%;
+/*
+This is the styling for individual sample pages.
+It is very similar to the search results page. It
+has two columns, one of which is scrollable when
+there are too many items.
+*/
+    height: 960px;
     background-color: $grey;
     position: relative;
     margin: 0 auto;
     text-align: center;
     padding: 20px;
+    overflow: scroll;
 
-    input
+    h3
     {
-        outline: none;
+        font-style: italic;
     }
-        
-    #search
+
+    #productpane
+/*
+The productpane div is on the left side of the
+page. It contains information about the donation
+box location.
+*/
     {
+        padding: 10px;
         background-color: rgba(255,255,250,0.3);
-        width: 60%;
+        width: 45%;
+        float: left;
+        text-align: left;
+        bottom: 20px;
+        top: 200px;
+        position: absolute;
+        height: 80%;
+        overflow: hidden;
+
+        #pictures
+        {
+            width: 40%;
+            height: 30%;
+            position: absolute;
+            left: 5%;
+            top: 10%;
+
+            img
+            {
+                float: left;
+                height: 100%;
+                width: 100%;
+                overflow: hidden;
+            }
+        }
+
+        #map
+        {
+            width: 40%;
+            height: 30%;
+            position: absolute;
+            top: 10%;
+            right: 5%;
+
+            img
+            {
+                float: right;
+                height: 100%;
+                width: 100%;
+                overflow: hidden;
+            }
+
+        }
+
+        #description
+        {
+            clear: both;
+        }
+
+    }
+
+    #reviewpane
+    {
+/*
+The review pane is on the right side of the page.
+It contains multiple reviews about the centre.
+*/
+        height: 80%;
+        top: 200px;
+        right: 20px;
+        bottom: 20px;
+        position: absolute;
+        float: right;
+        padding: 10px;
+        background-color: rgba(255,255,250,0.3);
+        width: 45%;
         margin: 0 auto;
-
-        #options
+        overflow: scroll;
+        
+        .review
         {
-            margin: 0 auto;
             text-align: left;
+            border: 1px solid white;
+            height: 150px;
+            margin-bottom: 10px;
 
-            label
+            .user
             {
-                font-weight: bold;
+                img
+                {
+                    float: left;
+                    height: 100px;
+                    width: 100px;
+                    overflow: hidden;
+                }
+
+                #user-name
+                {
+
+                }
             }
 
-            input[type=text]
+            .star-rating
             {
-                width: 80%;
-                padding: 12px 20px;
-                margin: 8px 0;
-                display: inline-block;
-                border: none;
-                border-radius: 0px;
-                box-sizing: border-box;
+
             }
-        }
 
-        input[type=submit]
-        {
-            background-color: $orange;
-            color: $black;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 0px;
-            cursor: pointer;
-            font-weight: bold
-        }
+            .comment
+            {
 
-        input[type=submit]:hover
-        {
-            background-color: $darkorange;
-            border: none;
+            }
+
         }
     }
 }

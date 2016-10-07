@@ -1,12 +1,11 @@
 @import 'variables';
 
-/******************************************************
-Styling for content div of index.html a.k.a
-search or home page
-******************************************************/
 #search-content
 {
-    height: 100%;
+/*
+Styling options for the search or home page.
+*/
+    height: 960px;
     background-color: $grey;
     position: relative;
     margin: 0 auto;
@@ -34,8 +33,26 @@ search or home page
             {
                 width: 10px;
             }
+
+            select
+            {
+                color: $black;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 0px;
+                cursor: pointer;
+                font-weight: bold;
+                outline: none;
+            }
         }
 
+/*
+See registration-content input comments for information
+about this section. They are the same.
+TODO: Move this styling to a more general scss file that
+is used for generation of the main CSS file.
+*/
         input[type=submit]
         {
             background-color: $orange;
