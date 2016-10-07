@@ -1,26 +1,13 @@
-/*
-Variable declarations
-*/
+@import 'variables';
+@import 'index';
 
-/*
-Colour palette excluding white
-*/
-$grey: rgba(223, 217, 226, 1);
-$orange: rgba(230, 190, 174, 1);
-$black: rgba(0, 1, 0, 1);
-$pink: rgba(199, 153, 166, 1);
-$darkorange: rgba(176, 113, 86, 1);
+/******************************************************
+This CSS file was generated from style.scss using Sass.
+******************************************************/
 
-/* 
-Manually calculated menu buttons width and header height. These are needed in order to centre the nav buttons and position the header.
-TODO: Make this change dynamically
-*/
-$menubuttonwidth: 356.74px;
-$headerheight: 150px;
-
-/* 
+/******************************************************
 Common styling and layout for all pages
-*/
+******************************************************/
 
 body
 {
@@ -29,11 +16,12 @@ body
     font-family: trebuchet ms;
 }
 
-/*
+/******************************************************
 Header layout
-*/
+******************************************************/
 #header-container
 {
+    position: relative;
     background-color: $grey;
     height: $headerheight;
 
@@ -47,8 +35,51 @@ Header layout
         text-align: center;
     }
 
+    /*
+    Navigation bar attributes
+    */
     #nav
     {
+        -webkit-flex-flow: row wrap;
+        flex-flow: row wrap;
+        border-top: 1px white solid;
+        border-bottom: 1px white solid;
+        position: relative;
+
+        ul
+        {
+            list-style-type: none;
+            padding: 0;
+            overflow: hidden;
+            width: $menubuttonwidth;
+            margin: auto;
+        /*
+            TODO: if media is less than menubuttonwidth then float:left so buttons are horizontal
+        */    
+            li
+            {
+                float: left;
+
+                a
+                {
+                    display: block;
+                    color: $black;
+                    text-align: center;
+                    padding: 10px 20px;
+                }
+                
+                a:hover
+                {
+                    background-color: $orange;
+                }
+
+                #active
+                {
+                    text-decoration: underline;
+                    background-color: $pink;
+                }
+            }
+        }
     }
 
     a
@@ -68,54 +99,13 @@ Header layout
     }
 }
 
-/*
-Navigation bar attributes
-*/
-#nav
-{
-    -webkit-flex-flow: row wrap;
-    flex-flow: row wrap;
-    border-top: 1px white solid;
-    border-bottom: 1px white solid;
-
-    ul
-    {
-        list-style-type: none;
-        padding: 0;
-        overflow: hidden;
-        width: $menubuttonwidth;
-        margin: auto;
-        
-        li
-        {
-            float: left;
-
-            a
-            {
-                display: block;
-                color: $black;
-                text-align: center;
-                padding: 10px 20px;
-                text-decoration: none;
-            }
-            
-            a:hover
-            {
-                background-color: $orange;
-            }
-
-            #active
-            {
-                text-decoration: underline;
-                background-color: $pink;
-            }
-        }
-    }
-}
-
+/******************************************************
+Footer layout
+******************************************************/
 #footer-container
 {
     height: 50px;
+    position: relative;
 
     #linkedin
     {
@@ -132,11 +122,9 @@ Navigation bar attributes
     }
 }
 
-/*
-Styling for page-specific div elements: the content-container div may contain sub-divs but after this point, it should be the only section that changes for each page type. All other page attributes should be uniform.
-*/
-#content-container
-{
-    height: 70vh;
-    background-color: $grey;
-}
+/******************************************************
+Styling for page-specific div elements: the content-
+container div may contain sub-divs but after this point
+it should be the only section that changes for each 
+page type. All other page attributes should be uniform.
+******************************************************/

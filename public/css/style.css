@@ -1,69 +1,117 @@
-/*
-Variable declarations
-*/
-/*
-Colour palette excluding white
-*/
-/* 
-Manually calculated menu buttons width and header height. These are needed in order to centre the nav buttons and position the header.
-TODO: Make this change dynamically
-*/
-/* 
+/******************************************************
+Variables for CSS generation using Sass
+******************************************************/
+/******************************************************
+Variables for CSS generation using Sass
+******************************************************/
+/******************************************************
+Styling for content div of index.html a.k.a
+search or home page
+******************************************************/
+#content-container {
+  height: 70vh;
+  background-color: rgba(223, 217, 226, 0.7);
+  position: relative;
+  margin: 0 auto;
+  text-align: center; }
+  #content-container input {
+    outline: none; }
+  #content-container #search {
+    background-color: rgba(255, 255, 250, 0.3);
+    width: 60%;
+    margin: 0 auto; }
+    #content-container #search #options {
+      margin: 0 auto;
+      text-align: left; }
+      #content-container #search #options label {
+        font-weight: bold; }
+      #content-container #search #options input[type=text] {
+        width: 80%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: none;
+        border-radius: 0px;
+        box-sizing: border-box; }
+    #content-container #search input[type=submit] {
+      background-color: rgba(230, 190, 174, 0.8);
+      color: #000100;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 0px;
+      cursor: pointer;
+      font-weight: bold; }
+    #content-container #search input[type=submit]:hover {
+      background-color: rgba(176, 113, 86, 0.9);
+      border: none; }
+
+/******************************************************
+This CSS file was generated from style.scss using Sass.
+******************************************************/
+/******************************************************
 Common styling and layout for all pages
-*/
+******************************************************/
 body {
   margin: 50px 100px 50px 100px;
   opacity: 0.8;
   font-family: trebuchet ms; }
 
-/*
+/******************************************************
 Header layout
-*/
+******************************************************/
 #header-container {
-  background-color: #dfd9e2;
-  height: 150px; }
+  position: relative;
+  background-color: rgba(223, 217, 226, 0.7);
+  height: 150px;
+  /*
+  Navigation bar attributes
+  */ }
   #header-container #headertitle {
     text-align: center; }
   #header-container #headersubtitle {
     text-align: center; }
+  #header-container #nav {
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    border-top: 1px white solid;
+    border-bottom: 1px white solid;
+    position: relative; }
+    #header-container #nav ul {
+      list-style-type: none;
+      padding: 0;
+      overflow: hidden;
+      width: 356.74px;
+      margin: auto;
+      /*
+          TODO: if media is less than menubuttonwidth then float:left so buttons are horizontal
+      */ }
+      #header-container #nav ul li {
+        float: left; }
+        #header-container #nav ul li a {
+          display: block;
+          color: #000100;
+          text-align: center;
+          padding: 10px 20px; }
+        #header-container #nav ul li a:hover {
+          background-color: rgba(230, 190, 174, 0.8); }
+        #header-container #nav ul li #active {
+          text-decoration: underline;
+          background-color: rgba(199, 153, 166, 0.7); }
   #header-container a {
     text-decoration: none;
     color: #000100; }
   #header-container h1 {
     color: #000100; }
   #header-container h2 {
-    color: #b07156; }
+    color: rgba(176, 113, 86, 0.9); }
 
-/*
-Navigation bar attributes
-*/
-#nav {
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap;
-  border-top: 1px white solid;
-  border-bottom: 1px white solid; }
-  #nav ul {
-    list-style-type: none;
-    padding: 0;
-    overflow: hidden;
-    width: 356.74px;
-    margin: auto; }
-    #nav ul li {
-      float: left; }
-      #nav ul li a {
-        display: block;
-        color: #000100;
-        text-align: center;
-        padding: 10px 20px;
-        text-decoration: none; }
-      #nav ul li a:hover {
-        background-color: #e6beae; }
-      #nav ul li #active {
-        text-decoration: underline;
-        background-color: #c799a6; }
-
+/******************************************************
+Footer layout
+******************************************************/
 #footer-container {
-  height: 50px; }
+  height: 50px;
+  position: relative; }
   #footer-container #linkedin {
     text-decoration: none; }
     #footer-container #linkedin #linkedinimg {
@@ -73,11 +121,11 @@ Navigation bar attributes
       vertical-align: middle;
       border: 0; }
 
-/*
-Styling for page-specific div elements: the content-container div may contain sub-divs but after this point, it should be the only section that changes for each page type. All other page attributes should be uniform.
-*/
-#content-container {
-  height: 70vh;
-  background-color: #dfd9e2; }
+/******************************************************
+Styling for page-specific div elements: the content-
+container div may contain sub-divs but after this point
+it should be the only section that changes for each 
+page type. All other page attributes should be uniform.
+******************************************************/
 
 /*# sourceMappingURL=style.css.map */
