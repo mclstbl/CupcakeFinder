@@ -7,12 +7,17 @@ This CSS file was generated from style.scss using Sass.
 /******************************************************
 Common styling and layout for all pages
 ******************************************************/
+html
+{
+    height: 100%;
+}
 
 body
 {
-    margin: 50px 100px 50px 100px;
-    opacity: 0.8;
+    margin: 30px 100px 30px 100px;
+    min-height: 100%;
     font-family: trebuchet ms;
+    opacity: 0.8;
 }
 
 /******************************************************
@@ -20,9 +25,18 @@ Header layout
 ******************************************************/
 #header-container
 {
+/*
+The header is always at the top of the page and has a set height
+*/
     position: relative;
     background-color: $grey;
     height: $headerheight;
+
+    #logo
+    {
+        width: 100px;
+        height: 100px;
+    }
 
     #headertitle
     {
@@ -35,9 +49,9 @@ Header layout
         text-align: center;
     }
 
-    /*
-    Navigation bar attributes
-    */
+/*
+Navigation bar attributes
+*/
     #nav
     {
         -webkit-flex-flow: row wrap;
@@ -53,9 +67,9 @@ Header layout
             overflow: hidden;
             width: $menubuttonwidth;
             margin: auto;
-        /*
+            /*
             TODO: if media is less than menubuttonwidth then float:left so buttons are horizontal
-        */    
+            */    
             li
             {
                 float: left;
@@ -100,27 +114,13 @@ Header layout
 }
 
 /******************************************************
-Footer layout
+Footer layout - the footer always stays at the bottom
+of the page
 ******************************************************/
 #footer-container
 {
-    height: 50px;
+    height: 20px;
     position: absolute;
-    padding-top: 40px;
-
-    #linkedin
-    {
-        text-decoration:none;
-
-        #linkedinimg
-        {
-            width: 80;
-            height: 15;
-            alt: "View Micaela Estabillo's LinkedIn profile";
-            vertical-align: middle;
-            border: 0;
-        }
-    }
 }
 
 /******************************************************
@@ -131,8 +131,15 @@ page type. All other page attributes should be uniform.
 ******************************************************/
 #content-container
 {
+/*
+The content container is always below the navigation
+bar and the height is always 1000px.
+*/
     height: 1000px;
-
+/*
+All input boxes are square and outline/borderless.
+The general look of the fields is defined here.
+*/
     input
     {
         outline: none;

@@ -4,21 +4,31 @@ This CSS file was generated from style.scss using Sass.
 /******************************************************
 Common styling and layout for all pages
 ******************************************************/
+html {
+  height: 100%; }
+
 body {
-  margin: 50px 100px 50px 100px;
-  opacity: 0.8;
-  font-family: trebuchet ms; }
+  margin: 30px 100px 30px 100px;
+  min-height: 100%;
+  font-family: trebuchet ms;
+  opacity: 0.8; }
 
 /******************************************************
 Header layout
 ******************************************************/
 #header-container {
+  /*
+  The header is always at the top of the page and has a set height
+  */
   position: relative;
-  background-color: rgba(223, 217, 226, 0.7);
+  background-color: rgba(223, 217, 226, 0.8);
   height: 160px;
   /*
   Navigation bar attributes
   */ }
+  #header-container #logo {
+    width: 100px;
+    height: 100px; }
   #header-container #headertitle {
     padding-top: 10px;
     text-align: center; }
@@ -37,7 +47,7 @@ Header layout
       width: 356.74px;
       margin: auto;
       /*
-          TODO: if media is less than menubuttonwidth then float:left so buttons are horizontal
+      TODO: if media is less than menubuttonwidth then float:left so buttons are horizontal
       */ }
       #header-container #nav ul li {
         float: left; }
@@ -60,20 +70,12 @@ Header layout
     color: rgba(176, 113, 86, 0.9); }
 
 /******************************************************
-Footer layout
+Footer layout - the footer always stays at the bottom
+of the page
 ******************************************************/
 #footer-container {
-  height: 50px;
-  position: absolute;
-  padding-top: 40px; }
-  #footer-container #linkedin {
-    text-decoration: none; }
-    #footer-container #linkedin #linkedinimg {
-      width: 80;
-      height: 15;
-      alt: "View Micaela Estabillo's LinkedIn profile";
-      vertical-align: middle;
-      border: 0; }
+  height: 20px;
+  position: absolute; }
 
 /******************************************************
 Styling for page-specific div elements: the content-
@@ -82,27 +84,15 @@ it should be the only section that changes for each
 page type. All other page attributes should be uniform.
 ******************************************************/
 #content-container {
+  /*
+  The content container is always below the navigation
+  bar and the height is always 1000px.
+  */
   height: 1000px;
-  /******************************************************
-  Styling for content div of index.html a.k.a
-  search or home page
-  ******************************************************/
-  /******************************************************
-  Styling for content div of registration.html
-  ******************************************************/
-  /******************************************************
-  Styling for content div of individual_sample.html
-  ******************************************************/
-  /******************************************************
-  Styling for content div of signin.html
-  ******************************************************/
-  /******************************************************
-  Styling for content div of index.html a.k.a
-  search or home page
-  ******************************************************/
-  /******************************************************
-  Styling for content div of results.html
-  ******************************************************/ }
+  /*
+  All input boxes are square and outline/borderless.
+  The general look of the fields is defined here.
+  */ }
   #content-container input {
     outline: none;
     border: none;
@@ -113,8 +103,11 @@ page type. All other page attributes should be uniform.
     display: inline-block;
     box-sizing: border-box; }
   #content-container #search-content {
-    height: 100%;
-    background-color: rgba(223, 217, 226, 0.7);
+    /*
+    Styling options for the search or home page.
+    */
+    height: 960px;
+    background-color: rgba(223, 217, 226, 0.8);
     position: relative;
     margin: 0 auto;
     text-align: center;
@@ -123,7 +116,13 @@ page type. All other page attributes should be uniform.
       padding: 10px;
       background-color: rgba(255, 255, 250, 0.3);
       width: 356.74px;
-      margin: 0 auto; }
+      margin: 0 auto;
+      /*
+      See registration-content input comments for information
+      about this section. They are the same.
+      TODO: Move this styling to a more general scss file that
+      is used for generation of the main CSS file.
+      */ }
       #content-container #search-content #search #options {
         margin: 0 auto;
         text-align: left; }
@@ -131,6 +130,15 @@ page type. All other page attributes should be uniform.
           font-weight: bold; }
         #content-container #search-content #search #options input[type=checkbox] {
           width: 10px; }
+        #content-container #search-content #search #options select {
+          color: #000100;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          border-radius: 0px;
+          cursor: pointer;
+          font-weight: bold;
+          outline: none; }
       #content-container #search-content #search input[type=submit] {
         background-color: rgba(230, 190, 174, 0.8);
         color: #000100;
@@ -145,13 +153,39 @@ page type. All other page attributes should be uniform.
         background-color: rgba(176, 113, 86, 0.9);
         border: none; }
   #content-container #registration-content {
-    height: 100%;
-    background-color: rgba(223, 217, 226, 0.7);
+    /*
+    The registration page contains a form with various
+    HTML5 input types. It follows the same formatting
+    as the forms in the search, signing and submission
+    pages.
+    */
+    height: 960px;
+    background-color: rgba(223, 217, 226, 0.8);
     position: relative;
     margin: 0 auto;
     text-align: center;
-    padding: 20px; }
+    padding: 20px;
+    /*
+    The submit input type is orange and is formatted a
+    little differently from the other input fields,
+    mainly because it is not a text input area but is a
+    button.
+    */
+    /*
+    The -webkit-datetime-edit-text is used here to
+    remove the up and down arrows inside the date
+    selector field.
+    */
+    /*
+    The submit button turns dark orange on hover in
+    order to give the user feedback and to show
+    that it is a clickable link.
+    */ }
     #content-container #registration-content #sign-up {
+      /*
+      The sign-up div is gives the form a lighter outline
+      than the rest of the page (see background-color)
+      */
       padding: 10px;
       background-color: rgba(255, 255, 250, 0.3);
       width: 356.74px;
@@ -163,70 +197,117 @@ page type. All other page attributes should be uniform.
       margin: 8px 0;
       cursor: pointer;
       font-weight: bold; }
+    #content-container #registration-content input[type=date]::-webkit-inner-spin-button {
+      display: none; }
     #content-container #registration-content input[type=submit]:hover {
       background-color: rgba(176, 113, 86, 0.9); }
-  #content-container #individual-result {
-    height: 100%;
-    background-color: rgba(223, 217, 226, 0.7);
+  #content-container #individual-content {
+    /*
+    This is the styling for individual sample pages.
+    It is very similar to the search results page. It
+    has two columns, one of which is scrollable when
+    there are too many items.
+    */
+    height: 960px;
+    background-color: rgba(223, 217, 226, 0.8);
     position: relative;
     margin: 0 auto;
     text-align: center;
-    padding: 20px; }
-    #content-container #individual-result input {
-      outline: none; }
-    #content-container #individual-result #search {
+    padding: 20px;
+    overflow: scroll; }
+    #content-container #individual-content h3 {
+      font-style: italic; }
+    #content-container #individual-content #productpane {
+      padding: 10px;
       background-color: rgba(255, 255, 250, 0.3);
-      width: 60%;
-      margin: 0 auto; }
-      #content-container #individual-result #search #options {
-        margin: 0 auto;
-        text-align: left; }
-        #content-container #individual-result #search #options label {
-          font-weight: bold; }
-        #content-container #individual-result #search #options input[type=text] {
-          width: 80%;
-          padding: 12px 20px;
-          margin: 8px 0;
-          display: inline-block;
-          border: none;
-          border-radius: 0px;
-          box-sizing: border-box; }
-      #content-container #individual-result #search input[type=submit] {
-        background-color: rgba(230, 190, 174, 0.8);
-        color: #000100;
-        padding: 14px 20px;
-        margin: 8px 0;
-        border: none;
-        border-radius: 0px;
-        cursor: pointer;
-        font-weight: bold; }
-      #content-container #individual-result #search input[type=submit]:hover {
-        background-color: rgba(176, 113, 86, 0.9);
-        border: none; }
-  #content-container #registration-content {
-    height: 100%;
-    background-color: rgba(223, 217, 226, 0.7);
+      width: 45%;
+      float: left;
+      text-align: left;
+      bottom: 20px;
+      top: 200px;
+      position: absolute;
+      height: 80%;
+      overflow: hidden; }
+      #content-container #individual-content #productpane #pictures {
+        width: 40%;
+        height: 30%;
+        position: absolute;
+        left: 5%;
+        top: 10%; }
+        #content-container #individual-content #productpane #pictures img {
+          float: left;
+          height: 100%;
+          width: 100%;
+          overflow: hidden; }
+      #content-container #individual-content #productpane #map {
+        width: 40%;
+        height: 30%;
+        position: absolute;
+        top: 10%;
+        right: 5%; }
+        #content-container #individual-content #productpane #map img {
+          float: right;
+          height: 100%;
+          width: 100%;
+          overflow: hidden; }
+      #content-container #individual-content #productpane #description {
+        clear: both; }
+    #content-container #individual-content #reviewpane {
+      /*
+      The review pane is on the right side of the page.
+      It contains multiple reviews about the centre.
+      */
+      height: 80%;
+      top: 200px;
+      right: 20px;
+      bottom: 20px;
+      position: absolute;
+      float: right;
+      padding: 10px;
+      background-color: rgba(255, 255, 250, 0.3);
+      width: 45%;
+      margin: 0 auto;
+      overflow: scroll; }
+      #content-container #individual-content #reviewpane .review {
+        text-align: left;
+        border: 1px solid white;
+        height: 150px;
+        margin-bottom: 10px; }
+        #content-container #individual-content #reviewpane .review .user img {
+          float: left;
+          height: 100px;
+          width: 100px;
+          overflow: hidden; }
+  #content-container #signin-content {
+    /*
+    The signin CSS is very similar to the registration
+    layout (see comments for registration-content),
+    but it has less attributes since there are less 
+    input areas.
+    */
+    height: 960px;
+    background-color: rgba(223, 217, 226, 0.8);
     position: relative;
     margin: 0 auto;
     text-align: center;
     padding: 20px; }
-    #content-container #registration-content #sign-in {
+    #content-container #signin-content #sign-in {
       padding: 10px;
       background-color: rgba(255, 255, 250, 0.3);
       width: 356.74px;
       margin: 0 auto; }
-    #content-container #registration-content input[type=submit] {
+    #content-container #signin-content input[type=submit] {
       background-color: rgba(230, 190, 174, 0.8);
       color: #000100;
       padding: 14px 20px;
       margin: 8px 0;
       cursor: pointer;
       font-weight: bold; }
-    #content-container #registration-content input[type=submit]:hover {
+    #content-container #signin-content input[type=submit]:hover {
       background-color: rgba(176, 113, 86, 0.9); }
   #content-container #submission-content {
-    height: 100%;
-    background-color: rgba(223, 217, 226, 0.7);
+    height: 960px;
+    background-color: rgba(223, 217, 226, 0.8);
     position: relative;
     margin: 0 auto;
     text-align: center;
@@ -266,13 +347,30 @@ page type. All other page attributes should be uniform.
         background-color: rgba(176, 113, 86, 0.9);
         border: none; }
   #content-container #results-content {
-    height: 100%;
-    background-color: rgba(223, 217, 226, 0.7);
+    /*
+    The height of the results container is always 960px
+    but in case there are many results, the contents
+    just scroll so that they fit.
+    */
+    height: 960px;
+    background-color: rgba(223, 217, 226, 0.8);
     position: relative;
     margin: 0 auto;
     text-align: center;
-    padding: 20px; }
+    padding: 20px;
+    overflow: scroll;
+    /*
+    The search results are presented as a list. An
+    ordered list HTML element is used to represent it.
+    The results page is divided into two columns (list
+    and map).
+    */ }
     #content-container #results-content #mini-search {
+      /*
+      The search bar is also available in the results page
+      in case the search needs to be updated. It uses the
+      same layout as the search page (index.html)
+      */
       padding-bottom: 20px; }
       #content-container #results-content #mini-search #search {
         padding: 10px;
@@ -300,15 +398,34 @@ page type. All other page attributes should be uniform.
           background-color: rgba(176, 113, 86, 0.9);
           border: none; }
     #content-container #results-content #list {
+      /*
+      The list div is on the left side of the page.
+      */
       clear: left;
       padding: 10px;
       background-color: rgba(255, 255, 250, 0.3);
       width: 45%;
       float: left;
       text-align: left;
-      height: 60%; }
+      bottom: 20px;
+      top: 200px;
+      position: absolute;
+      height: 100%;
+      bottom: 20px;
+      margin-bottom: 20px; }
       #content-container #results-content #list ol {
-        margin: auto; }
+        margin: auto;
+        /*
+        The list elements have been styled to contain an
+        image, stars and comments. The following lines
+        all serve to arrange the various contained element
+        types.
+        */ }
+        #content-container #results-content #list ol li img {
+          float: left;
+          width: 90px;
+          height: 90px;
+          margin-right: 30px; }
         #content-container #results-content #list ol li a {
           display: block;
           color: #000100;
@@ -350,13 +467,21 @@ page type. All other page attributes should be uniform.
           #content-container #results-content #list ol li .bottom p {
             font-size: 12px; }
     #content-container #results-content #map {
+      /*
+      The map div contains the Google map. It is on the
+      right side of the page
+      */
+      top: 200px;
+      right: 20px;
+      bottom: 20px;
+      position: absolute;
       float: right;
       padding: 10px;
       background-color: rgba(255, 255, 250, 0.3);
       width: 45%;
       margin: 0 auto;
       overflow: hidden;
-      height: 60%; }
+      height: 100%; }
       #content-container #results-content #map #google-map {
         height: 400px; }
 
