@@ -13,6 +13,9 @@ body {
   font-family: trebuchet ms;
   opacity: 0.8; }
 
+fieldset {
+  border: 1px white solid; }
+
 /******************************************************
 Header layout
 ******************************************************/
@@ -320,15 +323,10 @@ page type. All other page attributes should be uniform.
       #content-container #submission-content #newobject input#latitude, #content-container #submission-content #newobject input#longitude {
         width: 140px; }
       #content-container #submission-content #newobject input#image {
-        position: absolute;
-        top: 0;
-        right: 0;
         margin: 0;
         padding: 0;
-        font-size: 20px;
         cursor: pointer;
-        opacity: 0;
-        filter: alpha(opacity=0); }
+        text-align: center; }
       #content-container #submission-content #newobject label {
         text-align: left;
         font-weight: bold; }
