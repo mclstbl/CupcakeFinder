@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Donation Box Finder | Submit</title>
         <link rel="stylesheet" href="css/style.css">
@@ -25,18 +25,23 @@
                 <h3>Submit a donation centre location</h3>
                 <div id="newobject">
                     <form>
+                        <label for="name">Name of Organization</label>
                         <input id="name" type="text" placeholder="Name of donation centre" required><br>
-                        <input id="description" placeholder="Description">
-
-                        <input id="latitude" type="number" placeholder="Latitude position">
+                        <label for="description">Description</label>
+                        <input id="description" placeholder="Description"><br>
+                        <label for="latitude">Latitude</label>
+                        <input id="latitude" type="number" placeholder="Latitude position"><br>
+                        <label for="longitude">Longitude</label>
                         <input id="longitude" type="number" placeholder="Longitude position"><br>
                         
-                        Accepts
-                        <label><input id="clothing" type="checkbox" value="clothing"> Clothing</label>
-                        <label><input id="electronics" type="checkbox" value="electronics"> Electronics</label>
-                        <label><input id="food" type="checkbox" value="food"> Food</label><br>
+                        <legend>Accepts</legend>
+                        <fieldset>
+                        <input id="clothing" type="checkbox" value="clothing"><label for="clothing"> Clothing</label>
+                        <input id="electronics" type="checkbox" value="electronics"><label for="electronics"> Electronics</label>
+                        <input id="food" type="checkbox" value="food"><label for="food"> Food</label>
+                        </fieldset>
                         
-                        <label><input id="image" type="file" accept="image/*">Click here to upload photo</label>
+                        <label for="image">Click here to upload photo</label><input id="image" type="file" accept="image/*">
 
                         <input id="submit" type="submit" value="Submit">
                     </form>

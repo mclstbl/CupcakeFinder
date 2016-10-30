@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Donation Box Finder | Sign up </title>
         <link rel="stylesheet" href="css/style.css">
@@ -25,12 +25,17 @@
                 <h3>Sign up for Donation Box Finder</h3>
                 <div id="sign-up">
                     <form action="#">
-                        <input id="firstname" type="text" placeholder="First Name" required>
+                        <label for="firstname">First Name</label>
+                        <input id="firstname" type="text" placeholder="First Name" required><br>
+                        <label for="lastname">Last Name</label>
                         <input id="lastname" type="text" placeholder="Last Name" required><br>
+                        <label for="email">Email</label>
                         <input id="email" type="email" placeholder="Email" required><br>
+                        <label for="password">Password</label>
                         <input id="password" type="password" placeholder="Password" required><br>
-                        
+                        <label for="zipcode">Zip Code</label>
                         <input id="zipcode" type="text" placeholder="ZIP Code"><br>
+                        <label for="birthday">Birthday</label>
                         <input id="birthday" type="date"><br>
 
                         <input id="submit" type="submit" value="Sign up">

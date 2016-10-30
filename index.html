@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Donation Box Finder | Search</title>
         <link rel="stylesheet" href="public/css/style.css">
@@ -26,22 +26,26 @@
                 <h3>Start your search here</h3>
                 <form id="search" action="public/results.html#results">
                     <div id="options">
-                        Donate 
-                        <label><input id="clothing" type="checkbox" value="clothing"> Clothing</label>
-                        <label><input id="electronics" type="checkbox" value="electronics"> Electronics</label>
-                        <label><input id="food" type="checkbox" value="food"> Food</label> <br>
+                        <legend>Donate </legend>
+                        <fieldset>
+                        <input id="clothing" type="checkbox" value="clothing">
+                        <label for="clothing"> Clothing</label>
+                        <input id="electronics" type="checkbox" value="electronics">
+                        <label for="electronics"> Electronics</label>
+                        <input id="food" type="checkbox" value="food">
+                        <label for="food"> Food</label><br>
+                        </fieldset>
                         
-                       <label>Minimum Rating 
-                           <select id="rating" name="starlist">
-                              <option value="five">☆☆☆☆☆</option>
-                              <option value="four">☆☆☆☆</option>
-                              <option value="three">☆☆☆</option>
-                              <option value="two">☆☆</option>
-                              <option value="one">☆</option>
-                            </select>
-                        </label> <br>
+                        <label for="rating">Minimum Rating</label>
+                        <select id="rating" name="starlist">
+                          <option value="five">☆☆☆☆☆</option>
+                          <option value="four">☆☆☆☆</option>
+                          <option value="three">☆☆☆</option>
+                          <option value="two">☆☆</option>
+                          <option value="one">☆</option>
+                        </select> <br>
 
-                        <label>Near <input id="location" type="text" name="location" placeholder="My location"></label>
+                        <label for="location">Near </label><input id="location" type="text" name="location" placeholder="My location">
                     </div>
                     <input type="submit" value="Search">
                 </form>
