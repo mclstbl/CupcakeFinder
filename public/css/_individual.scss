@@ -8,7 +8,7 @@ It is very similar to the search results page. It
 has two columns, one of which is scrollable when
 there are too many items.
 */
-    height: 100%;
+    height: $mheight;
     background-color: $grey;
     position: relative;
     margin: 0 auto;
@@ -45,7 +45,7 @@ box location.
             height: 30%;
             position: absolute;
             left: 5%;
-            top: 10%;
+            top: 20%;
 
             img
             {
@@ -61,7 +61,7 @@ box location.
             width: 40%;
             height: 30%;
             position: absolute;
-            top: 10%;
+            top: 20%;
             right: 5%;
 
             img

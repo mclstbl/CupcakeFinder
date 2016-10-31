@@ -220,7 +220,7 @@ page type. All other page attributes should be uniform.
     has two columns, one of which is scrollable when
     there are too many items.
     */
-    height: 100%;
+    height: 560px;
     background-color: rgba(223, 217, 226, 0.8);
     position: relative;
     margin: 0 auto;
@@ -245,7 +245,7 @@ page type. All other page attributes should be uniform.
         height: 30%;
         position: absolute;
         left: 5%;
-        top: 10%; }
+        top: 20%; }
         #content-container #individual-content #productpane #pictures img {
           float: left;
           height: 100%;
@@ -255,7 +255,7 @@ page type. All other page attributes should be uniform.
         width: 40%;
         height: 30%;
         position: absolute;
-        top: 10%;
+        top: 20%;
         right: 5%; }
         #content-container #individual-content #productpane #map img {
           float: right;
@@ -358,7 +358,7 @@ page type. All other page attributes should be uniform.
     but in case there are many results, the contents
     just scroll so that they fit.
     */
-    height: 100%;
+    min-height: 560px;
     background-color: rgba(223, 217, 226, 0.8);
     position: relative;
     margin: 0 auto;
@@ -487,7 +487,7 @@ page type. All other page attributes should be uniform.
       width: 45%;
       margin: 0 auto;
       overflow: hidden;
-      height: 100%; }
+      height: 373.33333px; }
       #content-container #results-content #map #google-map {
         height: 400px; }
 
