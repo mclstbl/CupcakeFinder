@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="css/style.css">
         <meta charset="utf-8">
         <link rel="icon" href="images/logo.png">
+        <script type ="text/javascript" src="../scripts/registration.js"></script>
     </head>
     <body>
         <div id="header-container">
@@ -24,7 +25,7 @@
             <div id="registration-content">
                 <h3>Sign up for Donation Box Finder</h3>
                 <div id="sign-up">
-                    <form action="#">
+                    <form name="register" action="#" onsubmit="return validateForm()">
                         <label for="firstname">First Name</label>
                         <input id="firstname" type="text" placeholder="First Name" required><br>
                         <label for="lastname">Last Name</label>
