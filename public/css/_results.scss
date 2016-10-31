@@ -7,7 +7,7 @@ The height of the results container is always 960px
 but in case there are many results, the contents
 just scroll so that they fit.
 */
-    height: 960px;
+    height: 100%;
     background-color: $grey;
     position: relative;
     margin: 0 auto;

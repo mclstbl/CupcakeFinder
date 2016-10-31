@@ -3,10 +3,12 @@
     <head>
         <title>Donation Box Finder | Search</title>
         <link rel="stylesheet" href="public/css/style.css">
+        <script src="scripts/index.js"></script>
         <meta charset="utf-8">
         <link rel="icon" href="public/images/logo.png">
     </head>
     <body>
+<!-- The header-container div contains the navigation tabs and the title of this website. -->
         <div id="header-container">
             <h1 id="headertitle"><a href="index.html" >Donation Box Finder</a></h1>
             <!--img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Food_Bank_icon.svg/2000px-Food_Bank_icon.svg.png" alt="Site logo""-->
@@ -20,11 +22,13 @@
                 </ul>
             </div>
         </div>
-        
+<!-- The content-container div separates the main functions of the search page form the header and the footer. -->
         <div id="content-container">
             <div id="search-content">
                 <h3>Start your search here</h3>
-                <form id="search" action="public/results.html#results">
+                <form id="search" action="#results-container">
+<!-- The following fieldset presents the different types of donation centres for which the user may perform a search.
+A checkbox is used for each so multiple values can be selected in a single search. -->
                     <div id="options">
                         <legend>Donate </legend>
                         <fieldset>
@@ -35,7 +39,7 @@
                         <input id="food" type="checkbox" value="food">
                         <label for="food"> Food</label><br>
                         </fieldset>
-                        
+<!-- The "rating" dropdown menu allows a user to filter displayed results according to minimum rating. -->
                         <label for="rating">Minimum Rating</label>
                         <select id="rating" name="starlist">
                           <option value="five">☆☆☆☆☆</option>
@@ -44,14 +48,21 @@
                           <option value="two">☆☆</option>
                           <option value="one">☆</option>
                         </select> <br>
-
-                        <label for="location">Near </label><input id="location" type="text" name="location" placeholder="My location">
+<!-- This is an input field where users can enter their desired location. Entering a specific location overrides the default value,
+which is the user's current location. -->
+                        <label for="location">Near </label><input id="location" type="text" name="location" placeholder="My Location"><br>
+<!-- This button gets the user's location when clicked. -->
+                        <button type="button" id="geolocation" onClick="getLocation()">Get my location</button>
+<!-- The status div is where the geolocation error messages are displayed,
+if they exist -->
+                        <p id="status"></p>
                     </div>
+<!-- By default, the Submit button searches for donation centres near a user's location. -->
                     <input type="submit" value="Search">
                 </form>
             </div>
         </div>
-
+<!-- The footer currently holds a description this page. It may eventually be extended to include links and shortcuts. -->
         <div id="footer-container">
             <footer>
                 Micaela Estabillo's CS 4WW3 Project
