@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="css/style.css">
         <meta charset="utf-8">
         <link rel="icon" href="images/logo.png">
+        <script type ="text/javascript" src="../scripts/submission.js"></script>
     </head>
     <body>
         <div id="header-container">
@@ -33,7 +34,9 @@
                         <input id="latitude" type="number" placeholder="Latitude position"><br>
                         <label for="longitude">Longitude</label>
                         <input id="longitude" type="number" placeholder="Longitude position"><br>
-                        
+<!-- This button gets the user's location when clicked. -->
+                        <button type="button" id="geolocation" onClick="getLocation()">Get my location</button>
+                        <p id="status"</p>
                         <legend>Accepts</legend>
                         <fieldset>
                         <input id="clothing" type="checkbox" value="clothing"><label for="clothing"> Clothing</label>
