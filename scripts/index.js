@@ -15,11 +15,6 @@ function getLocation() {
 function showPosition(position) {
     document.getElementById("location").placeholder = "";
     document.getElementById("location").value = position.coords.latitude + ", " + position.coords.longitude;
-
-    // Display on a map
-    var latlon = position.coords.latitude + "," + position.coords.longitude;
-    var img_url = "http://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=400x300&sensor=false";
-    //document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
 }
 
 // This function displays messages that explain errors in using the

@@ -3,29 +3,28 @@
 
 // Page behaviours in the results page are defined here.
 
+// Hard-coded locations
 var locations = [
     {lat: 43.2605738, lng: -79.9304626},
     {lat: 44.2605738, lng: -80.9304626},
     {lat: 45.2605738, lng: -79.9304626}
 ];
 
+// InfoWindow sample content string describing object.
 var contentString = "<a href='individual.html'>Goodwill Donation Centre</a><div class='left'><div class='review'><div class='stars'>☆☆☆☆☆<div class='numberofreviews'>100 reviews</div></div><ul class='types'><li>Clothing</li><li>Electronics</li></ul></div><div class='right'><p class='address'>90 Glenmount Avenue, Hamilton ON L8S2R2</p></div><div class='bottom'><p class='topcomment'> 'Much wow'</p></div>";
 
 function initMap(position) {
-
 // Display on a map
     var lat_ = position.coords.latitude;
     var lon_ = position.coords.longitude;
     var latlon = lat_ + "," + lon_;
-        
+// Create the Google map centred at user's position.
     var map = new google.maps.Map(document.getElementById("map"), {
         zoom: 6,
         center: {lat: lat_, lng: lon_}
     });
-
 // Create an array of alphabetical characters used to label the markers.
     var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
 // Add some markers to the map.
 // Note: The code uses the JavaScript Array.prototype.map() method to
 // create an array of markers based on a given "locations" array.
