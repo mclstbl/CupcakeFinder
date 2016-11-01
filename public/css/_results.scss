@@ -7,7 +7,7 @@ The height of the results container is always 960px
 but in case there are many results, the contents
 just scroll so that they fit.
 */
-    height: 100%;
+    min-height: $mheight;
     background-color: $grey;
     position: relative;
     margin: 0 auto;
@@ -225,7 +225,7 @@ right side of the page
         width: 45%;
         margin: 0 auto;
         overflow: hidden;
-        height: 100%;  
+        height: $mheight / 1.5;  
 
         #google-map
         {
