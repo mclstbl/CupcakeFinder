@@ -10,16 +10,12 @@
     </head>
     <body>
         <div id="header-container">
-            <h1 id="headertitle"><a href="../index.html">Donation Box Finder</a></h1>
-            <h2 id="headersubtitle">Find donation centres near you</h2>
-            <div id="nav">
-                <ul>
-                    <li><a class="menubutton" href="../index.html">Home</a></li>
-                    <li><a class="menubutton" id="active" href="submission.html">Submit</a></li>
-                    <li><a class="menubutton" href="registration.html">Register</a></li>
-                    <li><a class="menubutton" href="signin.html">Sign in</a></li>
-                </ul>
-            </div>
+<!-- The menu.php show_header function is used to generate the nav bar.
+Passing the page title determines what the generated header looks like. -->
+            <?php
+                require_once "../menu.php";
+                show_header("Submit");
+            ?>
         </div>
         
         <div id="content-container">

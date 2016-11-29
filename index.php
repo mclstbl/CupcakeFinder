@@ -10,17 +10,12 @@
     <body>
 <!-- The header-container div contains the navigation tabs and the title of this website. -->
         <div id="header-container">
-            <h1 id="headertitle"><a href="index.html" >Donation Box Finder</a></h1>
-            <!--img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Food_Bank_icon.svg/2000px-Food_Bank_icon.svg.png" alt="Site logo""-->
-            <h2 id="headersubtitle">Find donation centres near you</h2>
-            <div id="nav">
-                <ul>
-                    <li><a class="menubutton" id="active" href="index.html">Home</a></li>
-                    <li><a class="menubutton" href="public/submission.html">Submit</a></li>
-                    <li><a class="menubutton" href="public/registration.html">Register</a></li>
-                    <li><a class="menubutton" href="public/signin.html">Sign in</a></li>
-                </ul>
-            </div>
+<!-- The menu.php show_header function is used to generate the nav bar.
+Passing the page title determines what the generated header looks like. -->
+            <?php
+                require_once "menu.php";
+                show_header("Home");
+            ?>
         </div>
 <!-- The content-container div separates the main functions of the search page form the header and the footer. -->
         <div id="content-container">

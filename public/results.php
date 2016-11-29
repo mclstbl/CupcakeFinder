@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE php>
+<php lang="en">
     <head>
         <title>Donation Box Finder | Search Results</title>
         <link rel="stylesheet" href="css/style.css">
@@ -10,16 +10,12 @@
     </head>
     <body>
         <div id="header-container">
-            <h1 id="headertitle"><a href="../index.html">Donation Box Finder</a></h1>
-            <h2 id="headersubtitle">Find donation centres near you</h2>
-            <div id="nav">
-                <ul>
-                    <li><a class="menubutton" id="active" href="../index.html">Home</a></li>
-                    <li><a class="menubutton" href="submission.html">Submit</a></li>
-                    <li><a class="menubutton" href="registration.html">Register</a></li>
-                    <li><a class="menubutton" href="signin.html">Sign in</a></li>
-                </ul>
-            </div>
+<!-- The menu.php show_header function is used to generate the nav bar.
+Passing the page title determines what the generated header looks like. -->
+            <?php
+                require_once "../menu.php";
+                show_header("Results");
+            ?>
         </div>
         
         <div id="content-container">
@@ -45,7 +41,7 @@
                     <ol class="hits">
                         <li>
                             <img class="pic" src="images/sample.jpg" alt="Location photo">
-                            <a href="individual.html">The Salvation Army</a>
+                            <a href="individual.php">The Salvation Army</a>
                             
                             <div class="left">
                                 <div class="review">
@@ -73,7 +69,7 @@
                         </li>
                         <li>
                             <img alt="Result location image" class="pic" src="images/sample.jpg">
-                            <a href="individual.html">Goodwill Donation Centre</a>
+                            <a href="individual.php">Goodwill Donation Centre</a>
                             
                             <div class="left">
                                 <div class="review">
@@ -100,7 +96,7 @@
                         </li>
                         <li>
                             <img class="pic" alt="Result location image" src="images/sample.jpg">
-                            <a href="individual.html">Good Shepherd</a>
+                            <a href="individual.php">Good Shepherd</a>
                             
                             <div class="left">
                                 <div class="review">
@@ -139,4 +135,4 @@
             </footer>
         </div>
     </body>
-</html>
+</php>
