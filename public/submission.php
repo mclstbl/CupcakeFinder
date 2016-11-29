@@ -13,7 +13,7 @@
 <!-- The menu.php show_header function is used to generate the nav bar.
 Passing the page title determines what the generated header looks like. -->
             <?php
-                require_once "../menu.php";
+                require_once "../scripts/menu.php";
                 show_header("Submit");
             ?>
         </div>
