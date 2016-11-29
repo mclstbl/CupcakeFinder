@@ -21,7 +21,7 @@ Passing the page title determines what the generated header looks like. -->
         <div id="content-container">
             <div id="search-content">
                 <h3>Start your search here</h3>
-                <form id="search" action="public/results.html#results-container">
+                <form id="search" action="public/results.php#results-container">
 <!-- The following fieldset presents the different types of donation centres for which the user may perform a search.
 A checkbox is used for each so multiple values can be selected in a single search. -->
                     <div id="options">

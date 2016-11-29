@@ -14,7 +14,7 @@
 Passing the page title determines what the generated header looks like. -->
             <?php
                 require_once "../scripts/menu.php";
-                show_header("individual");
+                show_header("Individual");
             ?>
         </div>
         
