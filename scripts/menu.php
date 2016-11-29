@@ -22,7 +22,9 @@
         switch ($pageType) {
 // The Home, Results and Individual pages set Home as the active page.
 // Other pages are contained in a directory named public so it is prepended to the name.
-            case "Home" || "Results" || "Individual":
+            case "Home":
+            case "Results":
+            case "Individual":
                 $pageNames = array_map(
                     function(&$name) {
                         if($name != "")
@@ -34,7 +36,9 @@
                 break;
 // The Register, Sign in and Submit pages are in a subdirectory so
 // the Home link is prepended to point to the parent directory.
-            case "Register" || "Sign in" || "Submit":
+            case "Register":
+            case "Sign in":
+            case "Submit":
                 $pageNames["Home"] = "../" . $pageNames["Home"];
                 break;
         }
