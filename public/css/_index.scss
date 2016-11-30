@@ -3,21 +3,18 @@
 #search-content
 {
 /*
-Styling options for the search or home page.
+Styling options for the home page.
 */
     height: 100%;
     background-color: $grey;
-    position: relative;
-    margin: 0 auto;
+    margin: auto;
     text-align: center;
-    padding: 20px;
         
     #search
     {
         padding: 10px;
         background-color: rgba(255,255,250,0.3);
-        width: $boxwidth;
-        margin: 0 auto;
+        margin: 20px;
 
         #options
         {
@@ -50,20 +47,18 @@ Styling options for the search or home page.
 /*
 See registration-content input comments for information
 about this section. They are the same.
-TODO: Move this styling to a more general scss file that
-is used for generation of the main CSS file.
 */
         input[type=submit]
         {
             background-color: $orange;
             color: $black;
             padding: 14px 20px;
-            margin: 8px 0;
+            margin: auto;
             border: none;
             border-radius: 0px;
             cursor: pointer;
             font-weight: bold;
-            width: $boxwidth;
+            width: 200px;
         }
 
         input[type=submit]:hover

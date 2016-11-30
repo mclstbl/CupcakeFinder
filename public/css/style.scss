@@ -15,10 +15,15 @@ html
 
 body
 {
-    margin: 30px 100px 30px 100px;
+    padding: 30px 100px 30px 100px;
     min-height: 100%;
     font-family: trebuchet ms;
     opacity: 0.8;
+    display: flex;
+    -webkit-flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -webkit-align-items: stretch;
 }
 
 fieldset
@@ -35,6 +40,19 @@ button
     cursor: pointer;
 }
 
+/*
+To centre a button, enclose it in a buttonHolder class
+*/
+.buttonHolder
+{
+    text-align: center;
+}
+
+h3
+{
+    margin: 0px;
+}
+
 /******************************************************
 Header layout
 ******************************************************/
@@ -43,9 +61,10 @@ Header layout
 /*
 The header is always at the top of the page and has a set height
 */
-    position: relative;
     background-color: $grey;
     height: $headerheight;
+    order: 1;
+    -webkit-flex-grow: 1;
 
     #logo
     {
@@ -55,7 +74,6 @@ The header is always at the top of the page and has a set height
 
     #headertitle
     {
-        padding-top: 10px;
         text-align: center;
     }
 
@@ -69,11 +87,12 @@ Navigation bar attributes
 */
     #nav
     {
-        -webkit-flex-flow: row wrap;
-        flex-flow: row wrap;
+        -webkit-flex-direction: row;
+        -webkit-flex-wrap: nowrap;
+        -webkit-justify-content: center;
         border-top: 1px white solid;
         border-bottom: 1px white solid;
-        position: relative;
+        background-color: $grey;
 
         ul
         {
@@ -82,11 +101,11 @@ Navigation bar attributes
             overflow: hidden;
             width: $menubuttonwidth;
             margin: auto;
-            /*
-            TODO: if media is less than menubuttonwidth then float:left so buttons are horizontal
-            */    
+
             li
             {
+                -webkit-flex-grow: 1;
+                width: $menubuttonwidth / 5px;
                 float: left;
 
                 a
@@ -134,8 +153,8 @@ of the page
 ******************************************************/
 #footer-container
 {
+    order: 3;
     height: 20px;
-    position: absolute;
 }
 
 /******************************************************
@@ -148,10 +167,13 @@ page type. All other page attributes should be uniform.
 {
 /*
 The content container is always below the navigation
-bar and the height is always 100%.
+bar and the height is always 80%.
 */
     min-height: $mheight;
-    height: 80%;
+    height: 70%;
+    order: 2;
+    -webkit-flex-grow: 1;
+    margin-top: 10px;
 /*
 All input boxes are square and outline/borderless.
 The general look of the fields is defined here.
@@ -163,7 +185,7 @@ The general look of the fields is defined here.
         border-radius: 0px;
         padding: 10px;
         width: 80%;
-        margin: 8px 0;
+        /*margin: 8px 0;*/
         display: inline-block;
         box-sizing: border-box;
     }
@@ -174,4 +196,113 @@ The general look of the fields is defined here.
     @import 'signin';
     @import 'submission';
     @import 'results';
+}
+
+/*
+@media (max-width: 970px) {
+    body {
+        padding: 30px 60px 30px 60px;
+    }
+
+    $menubuttonwidth: 500px;
+
+    #nav
+    {
+        ul
+        {
+            width: $menubuttonwidth;
+        }
+
+        li
+        {
+            width: $menubuttonwidth / 5;
+            font-size: 14px;
+
+            a
+            {
+                padding: 0px;
+                margin: 0px;
+            }
+        }
+    }
+}*/
+
+
+@media (max-width: 970px) {
+    body {
+        padding: 30px 40px 30px 40px;
+    }
+
+    $menubuttonwidth: 500px;
+
+    #nav
+    {
+        ul
+        {
+            width: $menubuttonwidth;
+        }
+
+        li
+        {
+            width: $menubuttonwidth / 5;
+            font-size: 14px;
+
+            a
+            {
+                padding: 0px;
+                margin: 0px;
+            }
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    body {
+        padding: 20px 20px 20px 20px;
+    }
+
+    #header-container
+    {
+        height: 120px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 15px;
+    }
+
+    h3 {
+        font-size: 12px;
+        margin: 0px;
+    }
+
+    $menubuttonwidth: 344px;
+
+    #nav
+    {
+        -webkit-flex-direction: column;
+        -webkit-justify-content: center;
+        -webkit-align-items: stretch;
+
+        ul
+        {
+            width: $menubuttonwidth;
+        }
+
+        li
+        {
+            width: $menubuttonwidth / 5;
+            font-size: 12px;
+
+            a
+            {
+                padding: 0px;
+                margin: auto;
+            }
+        }
+
+    }
 }

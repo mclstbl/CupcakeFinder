@@ -7,28 +7,29 @@ The height of the results container is always 960px
 but in case there are many results, the contents
 just scroll so that they fit.
 */
-    min-height: $mheight;
+    height: 100%;
     background-color: $grey;
-    position: relative;
-    margin: 0 auto;
+    margin: auto;
     text-align: center;
-    padding: 20px;
-    overflow: scroll;
+    display: flex;
+    -webkit-flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -webkit-align-items: stretch;
 
-    #mini-search
-    {
 /*
 The search bar is also available in the results page
 in case the search needs to be updated. It uses the
 same layout as the search page (index.html)
 */
+    #mini-search
+    {
         padding-bottom: 20px;
 
         #search
         {
             padding: 10px;
             background-color: rgba(255,255,250,0.3);
-            width: $boxwidth;
             margin: 0 auto;
             text-align: left;
 
@@ -57,7 +58,7 @@ same layout as the search page (index.html)
                 border-radius: 0px;
                 cursor: pointer;
                 font-weight: bold;
-                width: $boxwidth;
+                width: 200px;
             }
 
             input[type=submit]:hover
@@ -74,22 +75,19 @@ ordered list HTML element is used to represent it.
 The results page is divided into two columns (list
 and map).
 */
-    #list
-    {
+
 /*
 The list div is on the left side of the page.
 */
-        clear: left;
+    #list
+    {
+        order: 1;
         padding: 10px;
-        background-color: rgba(255,255,250,0.3);
         width: 45%;
+        height: mheight;
+        overflow: scroll;
         float: left;
         text-align: left;
-        bottom: 20px;
-        top: 200px;
-        position: absolute;
-        height: 100%;
-        bottom: 20px;
         margin-bottom: 20px;
 
         ol
@@ -209,21 +207,16 @@ types.
         }
     }
 
-    #map
-    {
 /*
 The map div contains the Google map. It is on the
 right side of the page
 */
-        top: 200px;
-        right: 20px;
-        bottom: 20px;
-        position: absolute;
-        float: right;
+    #map
+    {
+        order: 2;
         padding: 10px;
-        background-color: rgba(255,255,250,0.3);
         width: 45%;
-        margin: 0 auto;
+        margin: auto;
         overflow: hidden;
         height: $mheight / 1.5;  
 

@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <link rel="icon" href="images/logo.png">
         <script type ="text/javascript" src="../scripts/submission.js"></script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA10vc2deGv18oPyOA1w1k7H6i7mAIzMuA" type="text/javascript"></script>
+        <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA10vc2deGv18oPyOA1w1k7H6i7mAIzMuA" type="text/javascript"></script>
     </head>
     <body>
         <div id="header-container">
@@ -32,7 +32,9 @@ Passing the page title determines what the generated header looks like. -->
                         <label for="longitude">Longitude</label>
                         <input id="longitude" type="number" placeholder="Longitude position" pattern="-[0-9]+\.*[0-9]*"><br>
 <!-- This button gets the user's location when clicked. -->
-                        <button type="button" id="geolocation" onClick="getLocation()">Get my location</button>
+                        <div class="buttonHolder">
+                            <button type="button" id="geolocation" onClick="getLocation()">Get my location</button>
+                        </div>
                         <p id="status"</p>
                         <legend>Accepts</legend>
                         <fieldset>
@@ -41,9 +43,10 @@ Passing the page title determines what the generated header looks like. -->
                         <input id="food" type="checkbox" value="food"><label for="food"> Food</label>
                         </fieldset>
                         
-                        <label for="image">Upload photo</label><input id="image" type="file" accept="image/*">
-
-                        <input id="submit" type="submit" value="Submit">
+                        <div class="buttonHolder">
+                            <label for="image">Upload photo</label><input id="image" type="file" accept="image/*">
+                            <input id="submit" type="submit" value="Submit">
+                        </div>
                     </form>
                 </div>
             </div>

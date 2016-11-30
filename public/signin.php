@@ -25,8 +25,9 @@ Passing the page title determines what the generated header looks like. -->
                         <input id="email" type="email" placeholder="Email" required><br>
                         <label for="password">Password</label>
                         <input id="password" type="password" placeholder="Password" required><br>
-
-                        <input id="submit" type="submit" value="Log in">
+                        <div class="buttonHolder">
+                            <input id="submit" type="submit" value="Log in">
+                        </div>
                     </form>
                 </div>
             </div>

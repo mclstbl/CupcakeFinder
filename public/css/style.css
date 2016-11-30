@@ -6,13 +6,18 @@ Common styling and layout for all pages
 ******************************************************/
 html {
   height: 100%;
-  min-width: 560px; }
+  min-width: 400px; }
 
 body {
-  margin: 30px 100px 30px 100px;
+  padding: 30px 100px 30px 100px;
   min-height: 100%;
   font-family: trebuchet ms;
-  opacity: 0.8; }
+  opacity: 0.8;
+  display: flex;
+  -webkit-flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+  -webkit-justify-content: center;
+  -webkit-align-items: stretch; }
 
 fieldset {
   border: 1px white solid; }
@@ -24,6 +29,15 @@ button {
   border-radius: 0px;
   cursor: pointer; }
 
+/*
+To centre a button, enclose it in a buttonHolder class
+*/
+.buttonHolder {
+  text-align: center; }
+
+h3 {
+  margin: 0px; }
+
 /******************************************************
 Header layout
 ******************************************************/
@@ -31,9 +45,10 @@ Header layout
   /*
   The header is always at the top of the page and has a set height
   */
-  position: relative;
   background-color: rgba(223, 217, 226, 0.8);
   height: 160px;
+  order: 1;
+  -webkit-flex-grow: 1;
   /*
   Navigation bar attributes
   */ }
@@ -41,26 +56,25 @@ Header layout
     width: 100px;
     height: 100px; }
   #header-container #headertitle {
-    padding-top: 10px;
     text-align: center; }
   #header-container #headersubtitle {
     text-align: center; }
   #header-container #nav {
-    -webkit-flex-flow: row wrap;
-    flex-flow: row wrap;
+    -webkit-flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -webkit-justify-content: center;
     border-top: 1px white solid;
     border-bottom: 1px white solid;
-    position: relative; }
+    background-color: rgba(223, 217, 226, 0.8); }
     #header-container #nav ul {
       list-style-type: none;
       padding: 0;
       overflow: hidden;
-      width: 356.74px;
-      margin: auto;
-      /*
-      TODO: if media is less than menubuttonwidth then float:left so buttons are horizontal
-      */ }
+      width: 500px;
+      margin: auto; }
       #header-container #nav ul li {
+        -webkit-flex-grow: 1;
+        width: 100;
         float: left; }
         #header-container #nav ul li a {
           display: block;
@@ -85,8 +99,8 @@ Footer layout - the footer always stays at the bottom
 of the page
 ******************************************************/
 #footer-container {
-  height: 20px;
-  position: absolute; }
+  order: 3;
+  height: 20px; }
 
 /******************************************************
 Styling for page-specific div elements: the content-
@@ -97,10 +111,13 @@ page type. All other page attributes should be uniform.
 #content-container {
   /*
   The content container is always below the navigation
-  bar and the height is always 100%.
+  bar and the height is always 80%.
   */
-  min-height: 560px;
-  height: 80%;
+  min-height: 400px;
+  height: 70%;
+  order: 2;
+  -webkit-flex-grow: 1;
+  margin-top: 10px;
   /*
   All input boxes are square and outline/borderless.
   The general look of the fields is defined here.
@@ -111,29 +128,24 @@ page type. All other page attributes should be uniform.
     border-radius: 0px;
     padding: 10px;
     width: 80%;
-    margin: 8px 0;
+    /*margin: 8px 0;*/
     display: inline-block;
     box-sizing: border-box; }
   #content-container #search-content {
     /*
-    Styling options for the search or home page.
+    Styling options for the home page.
     */
     height: 100%;
     background-color: rgba(223, 217, 226, 0.8);
-    position: relative;
-    margin: 0 auto;
-    text-align: center;
-    padding: 20px; }
+    margin: auto;
+    text-align: center; }
     #content-container #search-content #search {
       padding: 10px;
       background-color: rgba(255, 255, 250, 0.3);
-      width: 356.74px;
-      margin: 0 auto;
+      margin: 20px;
       /*
       See registration-content input comments for information
       about this section. They are the same.
-      TODO: Move this styling to a more general scss file that
-      is used for generation of the main CSS file.
       */ }
       #content-container #search-content #search #options {
         margin: 0 auto;
@@ -155,12 +167,12 @@ page type. All other page attributes should be uniform.
         background-color: rgba(230, 190, 174, 0.8);
         color: #000100;
         padding: 14px 20px;
-        margin: 8px 0;
+        margin: auto;
         border: none;
         border-radius: 0px;
         cursor: pointer;
         font-weight: bold;
-        width: 356.74px; }
+        width: 200px; }
       #content-container #search-content #search input[type=submit]:hover {
         background-color: rgba(176, 113, 86, 0.9);
         border: none; }
@@ -184,14 +196,14 @@ page type. All other page attributes should be uniform.
     button.
     */
     /*
-    The -webkit-datetime-edit-text is used here to
-    remove the up and down arrows inside the date
-    selector field.
-    */
-    /*
     The submit button turns dark orange on hover in
     order to give the user feedback and to show
     that it is a clickable link.
+    */
+    /*
+    The -webkit-datetime-edit-text is used here to
+    remove the up and down arrows inside the date
+    selector field.
     */ }
     #content-container #registration-content #sign-up {
       /*
@@ -200,19 +212,23 @@ page type. All other page attributes should be uniform.
       */
       padding: 10px;
       background-color: rgba(255, 255, 250, 0.3);
-      width: 356.74px;
-      margin: 0 auto; }
+      margin: 0 auto;
+      text-align: right; }
     #content-container #registration-content input[type=submit] {
       background-color: rgba(230, 190, 174, 0.8);
       color: #000100;
       padding: 14px 20px;
-      margin: 8px 0;
+      margin: auto;
+      border: none;
+      border-radius: 0px;
       cursor: pointer;
-      font-weight: bold; }
+      font-weight: bold;
+      width: 200px; }
+    #content-container #registration-content input[type=submit]:hover {
+      background-color: rgba(176, 113, 86, 0.9);
+      border: none; }
     #content-container #registration-content input[type=date]::-webkit-inner-spin-button {
       display: none; }
-    #content-container #registration-content input[type=submit]:hover {
-      background-color: rgba(176, 113, 86, 0.9); }
   #content-container #individual-content {
     /*
     This is the styling for individual sample pages.
@@ -220,7 +236,7 @@ page type. All other page attributes should be uniform.
     has two columns, one of which is scrollable when
     there are too many items.
     */
-    height: 560px;
+    height: 400px;
     background-color: rgba(223, 217, 226, 0.8);
     position: relative;
     margin: 0 auto;
@@ -301,22 +317,37 @@ page type. All other page attributes should be uniform.
     background-color: rgba(223, 217, 226, 0.8);
     position: relative;
     margin: 0 auto;
+    padding: 20px;
     text-align: center;
-    padding: 20px; }
+    /*
+    The submit input type is orange and is formatted a
+    little differently from the other input fields,
+    mainly because it is not a text input area but is a
+    button.
+    */
+    /*
+    The submit button turns dark orange on hover in
+    order to give the user feedback and to show
+    that it is a clickable link.
+    */ }
     #content-container #signin-content #sign-in {
       padding: 10px;
       background-color: rgba(255, 255, 250, 0.3);
-      width: 356.74px;
-      margin: 0 auto; }
+      margin: 0 auto;
+      text-align: right; }
     #content-container #signin-content input[type=submit] {
       background-color: rgba(230, 190, 174, 0.8);
       color: #000100;
       padding: 14px 20px;
-      margin: 8px 0;
+      margin: auto;
+      border: none;
+      border-radius: 0px;
       cursor: pointer;
-      font-weight: bold; }
+      font-weight: bold;
+      width: 200px; }
     #content-container #signin-content input[type=submit]:hover {
-      background-color: rgba(176, 113, 86, 0.9); }
+      background-color: rgba(176, 113, 86, 0.9);
+      border: none; }
   #content-container #submission-content {
     height: 100%;
     background-color: rgba(223, 217, 226, 0.8);
@@ -327,10 +358,19 @@ page type. All other page attributes should be uniform.
     #content-container #submission-content #newobject {
       padding: 10px;
       background-color: rgba(255, 255, 250, 0.3);
-      width: 356.74px;
-      margin: 0 auto; }
-      #content-container #submission-content #newobject input#latitude, #content-container #submission-content #newobject input#longitude {
-        width: 140px; }
+      margin: 0 auto;
+      text-align: right;
+      /*
+      The submit input type is orange and is formatted a
+      little differently from the other input fields,
+      mainly because it is not a text input area but is a
+      button.
+      */
+      /*
+      The submit button turns dark orange on hover in
+      order to give the user feedback and to show
+      that it is a clickable link.
+      */ }
       #content-container #submission-content #newobject input#image {
         margin: 0;
         padding: 0;
@@ -344,44 +384,55 @@ page type. All other page attributes should be uniform.
         background-color: rgba(230, 190, 174, 0.8);
         color: #000100;
         padding: 14px 20px;
-        margin: 8px 0;
+        margin: auto;
         border: none;
         border-radius: 0px;
         cursor: pointer;
-        font-weight: bold; }
+        font-weight: bold;
+        width: 200px; }
       #content-container #submission-content #newobject input[type=submit]:hover {
         background-color: rgba(176, 113, 86, 0.9);
         border: none; }
+      #content-container #submission-content #newobject fieldset {
+        text-align: center; }
   #content-container #results-content {
     /*
     The height of the results container is always 960px
     but in case there are many results, the contents
     just scroll so that they fit.
     */
-    min-height: 560px;
+    height: 100%;
     background-color: rgba(223, 217, 226, 0.8);
-    position: relative;
-    margin: 0 auto;
+    margin: auto;
     text-align: center;
-    padding: 20px;
-    overflow: scroll;
+    display: flex;
+    -webkit-flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -webkit-align-items: stretch;
+    /*
+    The search bar is also available in the results page
+    in case the search needs to be updated. It uses the
+    same layout as the search page (index.html)
+    */
     /*
     The search results are presented as a list. An
     ordered list HTML element is used to represent it.
     The results page is divided into two columns (list
     and map).
+    */
+    /*
+    The list div is on the left side of the page.
+    */
+    /*
+    The map div contains the Google map. It is on the
+    right side of the page
     */ }
     #content-container #results-content #mini-search {
-      /*
-      The search bar is also available in the results page
-      in case the search needs to be updated. It uses the
-      same layout as the search page (index.html)
-      */
       padding-bottom: 20px; }
       #content-container #results-content #mini-search #search {
         padding: 10px;
         background-color: rgba(255, 255, 250, 0.3);
-        width: 356.74px;
         margin: 0 auto;
         text-align: left; }
         #content-container #results-content #mini-search #search label {
@@ -399,25 +450,18 @@ page type. All other page attributes should be uniform.
           border-radius: 0px;
           cursor: pointer;
           font-weight: bold;
-          width: 356.74px; }
+          width: 200px; }
         #content-container #results-content #mini-search #search input[type=submit]:hover {
           background-color: rgba(176, 113, 86, 0.9);
           border: none; }
     #content-container #results-content #list {
-      /*
-      The list div is on the left side of the page.
-      */
-      clear: left;
+      order: 1;
       padding: 10px;
-      background-color: rgba(255, 255, 250, 0.3);
       width: 45%;
+      height: mheight;
+      overflow: scroll;
       float: left;
       text-align: left;
-      bottom: 20px;
-      top: 200px;
-      position: absolute;
-      height: 100%;
-      bottom: 20px;
       margin-bottom: 20px; }
       #content-container #results-content #list ol {
         margin: auto;
@@ -473,22 +517,83 @@ page type. All other page attributes should be uniform.
           #content-container #results-content #list ol li .bottom p {
             font-size: 12px; }
     #content-container #results-content #map {
-      /*
-      The map div contains the Google map. It is on the
-      right side of the page
-      */
-      top: 200px;
-      right: 20px;
-      bottom: 20px;
-      position: absolute;
-      float: right;
+      order: 2;
       padding: 10px;
-      background-color: rgba(255, 255, 250, 0.3);
       width: 45%;
-      margin: 0 auto;
+      margin: auto;
       overflow: hidden;
-      height: 373.33333px; }
+      height: 266.66667px; }
       #content-container #results-content #map #google-map {
         height: 400px; }
+
+/*
+@media (max-width: 970px) {
+    body {
+        padding: 30px 60px 30px 60px;
+    }
+
+    $menubuttonwidth: 500px;
+
+    #nav
+    {
+        ul
+        {
+            width: $menubuttonwidth;
+        }
+
+        li
+        {
+            width: $menubuttonwidth / 5;
+            font-size: 14px;
+
+            a
+            {
+                padding: 0px;
+                margin: 0px;
+            }
+        }
+    }
+}*/
+@media (max-width: 970px) {
+  body {
+    padding: 30px 40px 30px 40px; }
+
+  #nav ul {
+    width: 500px; }
+  #nav li {
+    width: 100px;
+    font-size: 14px; }
+    #nav li a {
+      padding: 0px;
+      margin: 0px; } }
+@media (max-width: 550px) {
+  body {
+    padding: 20px 20px 20px 20px; }
+
+  #header-container {
+    height: 120px; }
+
+  h1 {
+    font-size: 20px; }
+
+  h2 {
+    font-size: 15px; }
+
+  h3 {
+    font-size: 12px;
+    margin: 0px; }
+
+  #nav {
+    -webkit-flex-direction: column;
+    -webkit-justify-content: center;
+    -webkit-align-items: stretch; }
+    #nav ul {
+      width: 344px; }
+    #nav li {
+      width: 68.8px;
+      font-size: 12px; }
+      #nav li a {
+        padding: 0px;
+        margin: auto; } }
 
 /*# sourceMappingURL=style.css.map */

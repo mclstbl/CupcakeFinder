@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <link rel="icon" href="images/logo.png">
         <script type ="text/javascript" src="../scripts/results.js"></script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA10vc2deGv18oPyOA1w1k7H6i7mAIzMuA" type="text/javascript"></script>
+        <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA10vc2deGv18oPyOA1w1k7H6i7mAIzMuA" type="text/javascript"></script>
     </head>
     <body>
         <div id="header-container">
@@ -20,7 +20,7 @@ Passing the page title determines what the generated header looks like. -->
         
         <div id="content-container">
             <div id="results-content">
-                <div id="mini-search">
+                <!--div id="mini-search">
                     <form id="search" action="#">
                         <legend>Donate </legend>
                         <fieldset>
@@ -33,10 +33,10 @@ Passing the page title determines what the generated header looks like. -->
                         <input id="near" type="text" name="location" placeholder="My location">
                         <input type="submit" value="Search">
                     </form>
-                </div>
+                </div-->
                 <a name="results">
                 <div id="list">
-                <h3>Search results</h3>
+                    <h3>Search results</h3>
                     <h4>Click name to see details</h4>
                     <ol class="hits">
                         <li>

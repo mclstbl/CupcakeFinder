@@ -34,8 +34,10 @@ Passing the page title determines what the generated header looks like. -->
                         <input id="zipcode" type="text" placeholder="ZIP Code"><br>
                         <label for="birthday">Birthday</label>
                         <input id="birthday" type="date"><br>
-
-                        <input id="submit" type="submit" value="Sign up">
+                        
+                        <div class="buttonHolder">
+                            <input id="submit" type="submit" value="Sign up">
+                        </div>
                     </form>
                     <p id="signin">Already have an account? Sign in <a href="signin.html">here</a></p>
                 </div>

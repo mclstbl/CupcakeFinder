@@ -45,15 +45,20 @@ A checkbox is used for each so multiple values can be selected in a single searc
                         </select> <br>
 <!-- This is an input field where users can enter their desired location. Entering a specific location overrides the default value,
 which is the user's current location. -->
-                        <label for="location">Near </label><input id="location" type="text" name="location" placeholder="My Location"><br>
+                        <label for="location">Near </label>
+                        <input id="location" type="text" name="location" placeholder="My Location"><br>
 <!-- This button gets the user's location when clicked. -->
-                        <button type="button" id="geolocation" onClick="getLocation()">Get my location</button>
+                        <div class="buttonHolder">
+                            <button type="button" id="geolocation" onClick="getLocation()">Get my location</button>
+                        </div>
 <!-- The status div is where the geolocation error messages are displayed,
 if they exist -->
                         <p id="status"></p>
-                    </div>
 <!-- By default, the Submit button searches for donation centres near a user's location. -->
-                    <input type="submit" value="Search">
+                        <div class="buttonHolder">
+                            <input type="submit" value="Search">
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>

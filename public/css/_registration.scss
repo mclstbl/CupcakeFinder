@@ -23,8 +23,8 @@ than the rest of the page (see background-color)
 */
         padding: 10px;
         background-color: rgba(255,255,250,0.3);
-        width: $boxwidth;
         margin: 0 auto;
+        text-align: right;
     }
 /*
 The submit input type is orange and is formatted a
@@ -33,13 +33,26 @@ mainly because it is not a text input area but is a
 button.
 */
     input[type=submit]
+        {
+            background-color: $orange;
+            color: $black;
+            padding: 14px 20px;
+            margin: auto;
+            border: none;
+            border-radius: 0px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 200px;
+        }
+/*
+The submit button turns dark orange on hover in
+order to give the user feedback and to show
+that it is a clickable link.
+*/
+    input[type=submit]:hover
     {
-        background-color: $orange;
-        color: $black;
-        padding: 14px 20px;
-        margin: 8px 0;
-        cursor: pointer;
-        font-weight: bold
+        background-color: $darkorange;
+        border: none;
     }
 /*
 The -webkit-datetime-edit-text is used here to
@@ -49,14 +62,5 @@ selector field.
     input[type=date]::-webkit-inner-spin-button
     {
         display: none;
-    }
-/*
-The submit button turns dark orange on hover in
-order to give the user feedback and to show
-that it is a clickable link.
-*/
-    input[type=submit]:hover
-    {
-        background-color: $darkorange;
     }
 }
