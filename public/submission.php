@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Donation Box Finder | Submit</title>
+        <?php
+            require "../scripts/menu.php";
+            show_title("Submit");
+        ?>
         <link rel="stylesheet" href="css/style.css">
-        <meta charset="utf-8">
         <link rel="icon" href="images/logo.png">
         <script type ="text/javascript" src="../scripts/submission.js"></script>
         <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA10vc2deGv18oPyOA1w1k7H6i7mAIzMuA" type="text/javascript"></script>

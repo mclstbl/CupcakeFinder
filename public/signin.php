@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Donation Box Finder | Sign in</title>
+        <?php
+            require "../scripts/menu.php";
+            show_title("Sign in");
+        ?>
         <link rel="stylesheet" href="css/style.css">
-        <meta charset="utf-8">
         <link rel="icon" href="images/logo.png">
     </head>
     <body>

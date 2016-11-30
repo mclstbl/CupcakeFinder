@@ -1,4 +1,11 @@
 <?php
+// show_title outputs whatever pageTitle is passed into it as the page's title.
+// The charset meta tag is the same for all webpages so it is included here.
+    function show_title($pageTitle) {
+        echo ('<title>' . $pageTitle . ' | Donation Box Finder </title>' .
+            '<meta charset="utf-8">');
+    }
+
 // The show_header generates a nav bar template for each page, depending on
 // what their "type" is. Possible types are identified in the code below.
     function show_header($pageType) {

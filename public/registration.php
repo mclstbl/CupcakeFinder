@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Donation Box Finder | Sign up </title>
+        <?php
+            require "../scripts/menu.php";
+            show_title("Sign up");
+        ?>
         <link rel="stylesheet" href="css/style.css">
-        <meta charset="utf-8">
         <link rel="icon" href="images/logo.png">
         <script type ="text/javascript" src="../scripts/registration.js"></script>
     </head>
@@ -34,7 +36,7 @@ Passing the page title determines what the generated header looks like. -->
                         <input id="zipcode" type="text" placeholder="ZIP Code"><br>
                         <label for="birthday">Birthday</label>
                         <input id="birthday" type="date"><br>
-                        
+
                         <div class="buttonHolder">
                             <input id="submit" type="submit" value="Sign up">
                         </div>

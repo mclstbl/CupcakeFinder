@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Donation Box Finder | Search</title>
+        <?php
+            require "scripts/menu.php";
+            show_title("Home");
+        ?>
+        <link rel="icon" href="public/images/logo.png">
         <link rel="stylesheet" href="public/css/style.css">
         <script type ="text/javascript" src="scripts/index.js"></script>
-        <meta charset="utf-8">
-        <link rel="icon" href="public/images/logo.png">
     </head>
     <body>
 <!-- The header-container div contains the navigation tabs and the title of this website. -->
