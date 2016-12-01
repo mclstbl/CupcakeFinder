@@ -79,7 +79,8 @@ Header layout
           display: block;
           color: #000100;
           text-align: center;
-          padding: 10px 20px; }
+          padding: 10px 20px;
+          margin: 0px; }
         #header-container #nav ul li a:hover {
           background-color: rgba(230, 190, 174, 0.8); }
         #header-container #nav ul li #active {
@@ -567,20 +568,34 @@ page type. All other page attributes should be uniform.
     font-size: 17px;
     margin: 0px; }
 
-  #nav ul {
-    width: 498px; }
-  #nav li {
-    width: 83px;
-    font-size: 14px; }
-    #nav li a {
-      padding: 0px;
-      margin: 0px; } }
+  #header-container #nav ul {
+    width: 534px;
+    padding: 0px;
+    margin: auto; }
+    #header-container #nav ul li {
+      font-size: 14px;
+      width: 89px; }
+      #header-container #nav ul li a.menubutton {
+        padding: 10px 0px; } }
 @media (max-width: 550px) {
   body {
     padding: 20px 20px 20px 20px; }
 
   #header-container {
     height: 120px; }
+    #header-container #nav {
+      -webkit-flex-direction: column;
+      -webkit-justify-content: center;
+      -webkit-align-items: stretch; }
+      #header-container #nav ul {
+        width: 343.98px;
+        margin: auto;
+        padding: 0px; }
+        #header-container #nav ul li {
+          width: 57.33px;
+          font-size: 12px; }
+          #header-container #nav ul li a.menubutton {
+            padding: 10px; }
 
   h1 {
     font-size: 20px; }
@@ -590,19 +605,6 @@ page type. All other page attributes should be uniform.
 
   h3 {
     font-size: 15px;
-    margin: 0px; }
-
-  #nav {
-    -webkit-flex-direction: column;
-    -webkit-justify-content: center;
-    -webkit-align-items: stretch; }
-    #nav ul {
-      width: 342px; }
-    #nav li {
-      width: 57px;
-      font-size: 12px; }
-      #nav li a {
-        padding: 0px;
-        margin: auto; } }
+    margin: 0px; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -113,6 +113,7 @@ Navigation bar attributes
                     color: $black;
                     text-align: center;
                     padding: 10px 20px;
+                    margin: 0px;
                 }
                 
                 a:hover
@@ -228,24 +229,28 @@ The general look of the fields is defined here.
         margin: 0px;
     }
 
-    $menubuttonwidth: 83px;
+    $menubuttonwidth: 89px;
 
-    #nav
+    #header-container
     {
-        ul
+        #nav
         {
-            width: $menubuttonwidth * 6;
-        }
-
-        li
-        {
-            width: $menubuttonwidth;
-            font-size: 14px;
-
-            a
+            ul
             {
+                width: $menubuttonwidth * 6;
                 padding: 0px;
-                margin: 0px;
+                margin: auto;
+
+                li
+                {
+                    font-size: 14px;
+                    width: $menubuttonwidth;
+
+                    a.menubutton
+                    {
+                        padding: 10px 0px;
+                    }
+                }
             }
         }
     }
@@ -256,9 +261,36 @@ The general look of the fields is defined here.
         padding: 20px 20px 20px 20px;
     }
 
+    $menubuttonwidth: 57.33px;
+
     #header-container
     {
         height: 120px;
+
+        #nav
+        {
+            -webkit-flex-direction: column;
+            -webkit-justify-content: center;
+            -webkit-align-items: stretch;
+
+            ul
+            {
+                width: $menubuttonwidth * 6;
+                margin: auto;
+                padding: 0px;
+
+                li
+                {
+                    width: $menubuttonwidth;
+                    font-size: 12px;
+
+                    a.menubutton
+                    {
+                        padding: 10px;
+                    }
+                }
+            }
+        }
     }
 
     h1 {
@@ -272,32 +304,5 @@ The general look of the fields is defined here.
     h3 {
         font-size: 15px;
         margin: 0px;
-    }
-
-    $menubuttonwidth: 57px;
-
-    #nav
-    {
-        -webkit-flex-direction: column;
-        -webkit-justify-content: center;
-        -webkit-align-items: stretch;
-
-        ul
-        {
-            width: $menubuttonwidth * 6;
-        }
-
-        li
-        {
-            width: $menubuttonwidth;
-            font-size: 12px;
-
-            a
-            {
-                padding: 0px;
-                margin: auto;
-            }
-        }
-
     }
 }
