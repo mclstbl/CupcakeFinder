@@ -12,11 +12,6 @@
 // Override Individual type pages to point to Search menu button.
         if ($pageType == "Individual")
             $pageType = "Search";
-// The header is the same for all nav bars.
-        echo ('<h1 id="headertitle"><a href="index.php" >Donation Box Finder</a></h1>'
-            . '<h2 id="headersubtitle">Find donation centres near you</h2>'
-            . '<div id="nav">'
-            . '<ul>');
 // The pageNames array contains pages which are linked from the nav bar.
 // The search Results and Individual pages are not included in the sidebar.
         $pageNames = [
@@ -24,7 +19,8 @@
             "Search"=>"results.php",
             "Submit"=>"submission.php",
             "Register"=>"registration.php",
-            "Sign in"=>"signin.php"
+            "Sign in"=>"signin.php",
+            "Logout"=>"signin.php"
         ];
 // Move the current pageType from the array before modifying links.
         $pageHolder = $pageNames[$pageType];
@@ -53,6 +49,12 @@
         }
 // Put the current page back into the array.
         $pageNames[$pageType] = $pageHolder;
+
+// The header is the same for all nav bars.
+        echo ('<h1 id="headertitle"><a href=' . $pageNames["Home"] . ' >Donation Box Finder</a></h1>'
+            . '<h2 id="headersubtitle">Find donation centres near you</h2>'
+            . '<div id="nav">'
+            . '<ul>');
 // Loop through pageNames key-value pairs to generate HTML code.
         foreach ($pageNames as $k=>$v) {
 // The pageType's nav bar link should look active.

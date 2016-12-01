@@ -25,14 +25,14 @@ Passing the page title determines what the generated header looks like. -->
                 <h3>Submit a donation centre location</h3>
                 <div id="newobject">
                     <form>
-                        <label for="name">Name of Organization</label>
-                        <input id="name" type="text" placeholder="Name of donation centre" required><br>
-                        <label for="description">Description</label>
-                        <input id="description" placeholder="Description"><br>
-                        <label for="latitude">Latitude</label>
-                        <input id="latitude" type="number" placeholder="Latitude position" pattern="-[0-9]+\.[0-9]+"><br>
-                        <label for="longitude">Longitude</label>
-                        <input id="longitude" type="number" placeholder="Longitude position" pattern="-[0-9]+\.*[0-9]*"><br>
+                        <label for="name">Name of Organization</label><br>
+                        <input id="name" type="text" placeholder="Name of donation centre" required><br><br>
+                        <label for="description">Description</label><br>
+                        <input id="description" placeholder="Description"><br><br>
+                        <label for="latitude">Latitude</label><br>
+                        <input id="latitude" type="number" placeholder="Latitude position" pattern="-[0-9]+\.[0-9]+"><br><br>
+                        <label for="longitude">Longitude</label><br>
+                        <input id="longitude" type="number" placeholder="Longitude position" pattern="-[0-9]+\.*[0-9]*"><br><br>
 <!-- This button gets the user's location when clicked. -->
                         <div class="buttonHolder">
                             <button type="button" id="geolocation" onClick="getLocation()">Get my location</button>
@@ -40,13 +40,15 @@ Passing the page title determines what the generated header looks like. -->
                         <p id="status"</p>
                         <legend>Accepts</legend>
                         <fieldset>
-                        <input id="clothing" type="checkbox" value="clothing"><label for="clothing"> Clothing</label>
-                        <input id="electronics" type="checkbox" value="electronics"><label for="electronics"> Electronics</label>
-                        <input id="food" type="checkbox" value="food"><label for="food"> Food</label>
+                            <input id="clothing" type="checkbox" value="clothing"><label for="clothing"> Clothing</label>
+                            <input id="electronics" type="checkbox" value="electronics"><label for="electronics"> Electronics</label>
+                            <input id="food" type="checkbox" value="food"><label for="food"> Food</label>
                         </fieldset>
+                        <br>
                         
                         <div class="buttonHolder">
-                            <label for="image">Upload photo</label><input id="image" type="file" accept="image/*">
+                            <label for="image">Upload photo</label><br>
+                            <input id="image" type="file" accept="image/*"><br>
                             <input id="submit" type="submit" value="Submit">
                         </div>
                     </form>

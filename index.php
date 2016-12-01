@@ -35,19 +35,19 @@ A checkbox is used for each so multiple values can be selected in a single searc
                         <label for="electronics"> Electronics</label>
                         <input id="food" type="checkbox" value="food">
                         <label for="food"> Food</label><br>
-                        </fieldset>
+                        </fieldset><br>
 <!-- The "rating" dropdown menu allows a user to filter displayed results according to minimum rating. -->
-                        <label for="rating">Minimum Rating</label>
+                        <label for="rating">Minimum Rating</label><br>
                         <select id="rating" name="starlist">
                           <option value="five">☆☆☆☆☆</option>
                           <option value="four">☆☆☆☆</option>
                           <option value="three">☆☆☆</option>
                           <option value="two">☆☆</option>
                           <option value="one">☆</option>
-                        </select> <br>
+                        </select><br>
 <!-- This is an input field where users can enter their desired location. Entering a specific location overrides the default value,
 which is the user's current location. -->
-                        <label for="location">Near </label>
+                        <label for="location">Near </label><br>
                         <input id="location" type="text" name="location" placeholder="My Location"><br>
 <!-- This button gets the user's location when clicked. -->
                         <div class="buttonHolder">

@@ -10,13 +10,13 @@ Common styling and layout for all pages
 html
 {
     height: 100%;
-    min-width: $mwidth;
+    minwidth: $mwidth;
 }
 
 body
 {
     padding: 30px 100px 30px 100px;
-    min-height: 100%;
+    minheight: 100%;
     font-family: trebuchet ms;
     opacity: 0.8;
     display: flex;
@@ -64,7 +64,8 @@ The header is always at the top of the page and has a set height
     background-color: $grey;
     height: $headerheight;
     order: 1;
-    -webkit-flex-grow: 1;
+    -webkit-flex-grow: 0;
+    padding: 0px;
 
     #logo
     {
@@ -97,15 +98,13 @@ Navigation bar attributes
         ul
         {
             list-style-type: none;
-            padding: 0;
             overflow: hidden;
-            width: $menubuttonwidth;
+            width: $menubuttonwidth * 6;
             margin: auto;
 
             li
             {
-                -webkit-flex-grow: 1;
-                width: $menubuttonwidth / 5px;
+                width: $menubuttonwidth;
                 float: left;
 
                 a
@@ -169,11 +168,10 @@ page type. All other page attributes should be uniform.
 The content container is always below the navigation
 bar and the height is always 80%.
 */
-    min-height: $mheight;
-    height: 70%;
+    minheight: $mheight;
     order: 2;
     -webkit-flex-grow: 1;
-    margin-top: 10px;
+    padding: 0px;
 /*
 All input boxes are square and outline/borderless.
 The general look of the fields is defined here.
@@ -185,9 +183,23 @@ The general look of the fields is defined here.
         border-radius: 0px;
         padding: 10px;
         width: 80%;
-        /*margin: 8px 0;*/
+        max-width: 500px;
         display: inline-block;
         box-sizing: border-box;
+    }
+
+    fieldset
+    {
+        width: 60%;
+        max-width: 500px;
+        min-width: 275px;
+        text-align: center;
+        margin: auto;
+    }
+
+    legend
+    {
+        margin: auto;
     }
     
     @import 'index';
@@ -198,53 +210,36 @@ The general look of the fields is defined here.
     @import 'results';
 }
 
-/*
-@media (max-width: 970px) {
-    body {
-        padding: 30px 60px 30px 60px;
-    }
-
-    $menubuttonwidth: 500px;
-
-    #nav
-    {
-        ul
-        {
-            width: $menubuttonwidth;
-        }
-
-        li
-        {
-            width: $menubuttonwidth / 5;
-            font-size: 14px;
-
-            a
-            {
-                padding: 0px;
-                margin: 0px;
-            }
-        }
-    }
-}*/
-
-
 @media (max-width: 970px) {
     body {
         padding: 30px 40px 30px 40px;
     }
 
-    $menubuttonwidth: 500px;
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 19px;
+    }
+
+    h3 {
+        font-size: 17px;
+        margin: 0px;
+    }
+
+    $menubuttonwidth: 83px;
 
     #nav
     {
         ul
         {
-            width: $menubuttonwidth;
+            width: $menubuttonwidth * 6;
         }
 
         li
         {
-            width: $menubuttonwidth / 5;
+            width: $menubuttonwidth;
             font-size: 14px;
 
             a
@@ -275,11 +270,11 @@ The general look of the fields is defined here.
     }
 
     h3 {
-        font-size: 12px;
+        font-size: 15px;
         margin: 0px;
     }
 
-    $menubuttonwidth: 344px;
+    $menubuttonwidth: 57px;
 
     #nav
     {
@@ -289,12 +284,12 @@ The general look of the fields is defined here.
 
         ul
         {
-            width: $menubuttonwidth;
+            width: $menubuttonwidth * 6;
         }
 
         li
         {
-            width: $menubuttonwidth / 5;
+            width: $menubuttonwidth;
             font-size: 12px;
 
             a

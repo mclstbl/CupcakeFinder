@@ -24,18 +24,18 @@ Passing the page title determines what the generated header looks like. -->
                 <h3>Sign up for Donation Box Finder</h3>
                 <div id="sign-up">
                     <form name="register" action="#" onsubmit="return validateForm()">
-                        <label for="firstname">First Name</label>
-                        <input id="firstname" type="text" placeholder="First Name" required><br>
-                        <label for="lastname">Last Name</label>
-                        <input id="lastname" type="text" placeholder="Last Name" required><br>
-                        <label for="email">Email</label>
-                        <input id="email" type="email" placeholder="Email" required><br>
-                        <label for="password">Password</label>
-                        <input id="password" type="password" placeholder="Password" required><br>
-                        <label for="zipcode">Zip Code</label>
-                        <input id="zipcode" type="text" placeholder="ZIP Code"><br>
-                        <label for="birthday">Birthday</label>
-                        <input id="birthday" type="date"><br>
+                        <label for="firstname">First Name</label><br>
+                        <input id="firstname" type="text" placeholder="First Name" required><br><br>
+                        <label for="lastname">Last Name</label><br>
+                        <input id="lastname" type="text" placeholder="Last Name" required><br><br>
+                        <label for="email">Email</label><br>
+                        <input id="email" type="email" placeholder="Email" required><br><br>
+                        <label for="password">Password</label><br>
+                        <input id="password" type="password" placeholder="Password" required><br><br>
+                        <label for="zipcode">Zip Code</label><br>
+                        <input id="zipcode" type="text" placeholder="ZIP Code"><br><br>
+                        <label for="birthday">Birthday</label><br>
+                        <input id="birthday" type="date"><br><br>
 
                         <div class="buttonHolder">
                             <input id="submit" type="submit" value="Sign up">

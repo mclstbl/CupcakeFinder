@@ -10,10 +10,9 @@ pages.
 */
     height: 100%;
     background-color: $grey;
-    position: relative;
-    margin: 0 auto;
+    margin: auto;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
 
     #sign-up
     {
@@ -21,10 +20,10 @@ pages.
 The sign-up div is gives the form a lighter outline
 than the rest of the page (see background-color)
 */
-        padding: 10px;
         background-color: rgba(255,255,250,0.3);
         margin: 0 auto;
-        text-align: right;
+        text-align: center;
+        width: $boxwidth;
     }
 /*
 The submit input type is orange and is formatted a

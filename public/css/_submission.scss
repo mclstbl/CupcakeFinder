@@ -4,29 +4,24 @@
 {
     height: 100%;
     background-color: $grey;
-    position: relative;
-    margin: 0 auto;
+    margin: auto;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
 
     #newobject
     {
         padding: 10px;
         background-color: rgba(255,255,250,0.3);
-        margin: 0 auto;
-        text-align: right;
+        margin: auto;
+        text-align: center;
+        width: $boxwidth;
 
         input#image
         {
-            margin: 0;
-            padding: 0;
             cursor: pointer;
-        }
-
-        label
-        {
-            text-align: left;
-            font-weight: bold;
+            text-align: center;
+            width: 200px;
+            maxwidth: 200px;
         }
 
         input[type=checkbox]
@@ -60,11 +55,6 @@ that it is a clickable link.
         {
             background-color: $darkorange;
             border: none;
-        }
-
-        fieldset
-        {
-            text-align: center;
         }
     }
 }

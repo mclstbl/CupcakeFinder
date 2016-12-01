@@ -23,10 +23,10 @@ Passing the page title determines what the generated header looks like. -->
                 <h3>Log in to Donation Box Finder</h3>
                 <div id="sign-in">
                     <form>
-                        <label for="email">Email</label>
-                        <input id="email" type="email" placeholder="Email" required><br>
-                        <label for="password">Password</label>
-                        <input id="password" type="password" placeholder="Password" required><br>
+                        <label for="email">Email</label><br>
+                        <input id="email" type="email" placeholder="Email" required><br><br>
+                        <label for="password">Password</label><br>
+                        <input id="password" type="password" placeholder="Password" required><br><br>
                         <div class="buttonHolder">
                             <input id="submit" type="submit" value="Log in">
                         </div>
