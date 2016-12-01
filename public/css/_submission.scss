@@ -58,3 +58,25 @@ that it is a clickable link.
         }
     }
 }
+
+@media (max-width: 970px) {
+    #submission-content
+    {
+        $boxwidth: 400px;
+        #newobject
+        {
+            width: $boxwidth;
+        }
+    }
+}
+
+@media(max-width: 550px) {
+    #submission-content
+    {
+        $boxwidth: 300px;
+        #newobject
+        {
+            width: $boxwidth;
+        }
+    }
+}

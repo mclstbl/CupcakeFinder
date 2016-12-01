@@ -51,3 +51,25 @@ that it is a clickable link.
         border: none;
     }
 }
+
+@media (max-width: 970px) {
+    #signin-content
+    {
+        $boxwidth: 400px;
+        #sign-in
+        {
+            width: $boxwidth;
+        }
+    }
+}
+
+@media(max-width: 550px) {
+    #signin-content
+    {
+        $boxwidth: 300px;
+        #sign-in
+        {
+            width: $boxwidth;
+        }
+    }
+}

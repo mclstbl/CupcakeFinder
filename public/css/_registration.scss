@@ -24,6 +24,7 @@ than the rest of the page (see background-color)
         margin: 0 auto;
         text-align: center;
         width: $boxwidth;
+        padding: 10px;
     }
 /*
 The submit input type is orange and is formatted a
@@ -61,5 +62,27 @@ selector field.
     input[type=date]::-webkit-inner-spin-button
     {
         display: none;
+    }
+}
+
+@media (max-width: 970px) {
+    #registration-content
+    {
+        $boxwidth: 400px;
+        #sign-up
+        {
+            width: $boxwidth;
+        }
+    }
+}
+
+@media(max-width: 550px) {
+    #registration-content
+    {
+        $boxwidth: 300px;
+        #sign-up
+        {
+            width: $boxwidth;
+        }
     }
 }

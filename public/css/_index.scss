@@ -75,3 +75,25 @@ about this section. They are the same.
         }
     }
 }
+
+@media (max-width: 970px) {
+    #search-content
+    {
+        $boxwidth: 400px;
+        #search
+        {
+            width: $boxwidth;
+        }
+    }
+}
+
+@media(max-width: 550px) {
+    #search-content
+    {
+        $boxwidth: 300px;
+        #search
+        {
+            width: $boxwidth;
+        }
+    }
+}

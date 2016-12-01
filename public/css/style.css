@@ -151,7 +151,7 @@ page type. All other page attributes should be uniform.
       padding: 10px;
       background-color: rgba(255, 255, 250, 0.3);
       margin: auto;
-      width: 300px;
+      width: 500px;
       /*
       See registration-content input comments for information
       about this section. They are the same.
@@ -187,6 +187,12 @@ page type. All other page attributes should be uniform.
         border: none; }
       #content-container #search-content #search fieldset {
         text-align: center; }
+  @media (max-width: 970px) {
+    #content-container #search-content #search {
+      width: 400px; } }
+  @media (max-width: 550px) {
+    #content-container #search-content #search {
+      width: 300px; } }
   #content-container #registration-content {
     /*
     The registration page contains a form with various
@@ -223,7 +229,8 @@ page type. All other page attributes should be uniform.
       background-color: rgba(255, 255, 250, 0.3);
       margin: 0 auto;
       text-align: center;
-      width: 300px; }
+      width: 500px;
+      padding: 10px; }
     #content-container #registration-content input[type=submit] {
       background-color: rgba(230, 190, 174, 0.8);
       color: #000100;
@@ -239,6 +246,12 @@ page type. All other page attributes should be uniform.
       border: none; }
     #content-container #registration-content input[type=date]::-webkit-inner-spin-button {
       display: none; }
+  @media (max-width: 970px) {
+    #content-container #registration-content #sign-up {
+      width: 400px; } }
+  @media (max-width: 550px) {
+    #content-container #registration-content #sign-up {
+      width: 300px; } }
   #content-container #individual-content {
     /*
     This is the styling for individual sample pages.
@@ -344,7 +357,7 @@ page type. All other page attributes should be uniform.
       background-color: rgba(255, 255, 250, 0.3);
       margin: 0 auto;
       text-align: center;
-      width: 300px; }
+      width: 500px; }
     #content-container #signin-content input[type=submit] {
       background-color: rgba(230, 190, 174, 0.8);
       color: #000100;
@@ -358,6 +371,12 @@ page type. All other page attributes should be uniform.
     #content-container #signin-content input[type=submit]:hover {
       background-color: rgba(176, 113, 86, 0.9);
       border: none; }
+  @media (max-width: 970px) {
+    #content-container #signin-content #sign-in {
+      width: 400px; } }
+  @media (max-width: 550px) {
+    #content-container #signin-content #sign-in {
+      width: 300px; } }
   #content-container #submission-content {
     height: 100%;
     background-color: rgba(223, 217, 226, 0.8);
@@ -369,7 +388,7 @@ page type. All other page attributes should be uniform.
       background-color: rgba(255, 255, 250, 0.3);
       margin: auto;
       text-align: center;
-      width: 300px;
+      width: 500px;
       /*
       The submit input type is orange and is formatted a
       little differently from the other input fields,
@@ -401,6 +420,12 @@ page type. All other page attributes should be uniform.
       #content-container #submission-content #newobject input[type=submit]:hover {
         background-color: rgba(176, 113, 86, 0.9);
         border: none; }
+  @media (max-width: 970px) {
+    #content-container #submission-content #newobject {
+      width: 400px; } }
+  @media (max-width: 550px) {
+    #content-container #submission-content #newobject {
+      width: 300px; } }
   #content-container #results-content {
     /*
     The height of the results container is always 960px
@@ -412,7 +437,7 @@ page type. All other page attributes should be uniform.
     margin: auto;
     text-align: center;
     display: flex;
-    -webkit-flex-direction: row;
+    -webkit-flex-direction: column;
     -webkit-flex-wrap: nowrap;
     -webkit-justify-content: center;
     -webkit-align-items: stretch;
@@ -483,14 +508,15 @@ page type. All other page attributes should be uniform.
     right side of the page
     */ }
     #content-container #results-content #list {
-      order: 1;
+      order: 2;
       padding: 10px;
-      width: 45%;
+      width: 80%;
       height: mheight;
       overflow: scroll;
-      float: left;
       text-align: left;
-      margin-bottom: 20px; }
+      /*margin-bottom: 20px;*/
+      margin: auto;
+      -webkit-flex-grow: 1; }
       #content-container #results-content #list ol {
         margin: auto;
         /*
@@ -545,14 +571,15 @@ page type. All other page attributes should be uniform.
           #content-container #results-content #list ol li .bottom p {
             font-size: 12px; }
     #content-container #results-content #map {
-      order: 2;
+      order: 1;
       padding: 10px;
-      width: 45%;
+      width: 60%;
       margin: auto;
       overflow: hidden;
-      height: 266.66667px; }
+      height: 40%; }
       #content-container #results-content #map #google-map {
-        height: 400px; }
+        height: 400px;
+        overflow: hidden; }
 
 @media (max-width: 970px) {
   body {
