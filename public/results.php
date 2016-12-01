@@ -37,10 +37,14 @@ Passing the page title determines what the generated header looks like. -->
                     </form>
                 </div-->
                 <a name="results">
+                <h3>Search results</h3>
+
+                <div id="map">
+                </div>
+
                 <div id="list">
-                    <h3>Search results</h3>
-                    <h4>Click name to see details</h4>
                     <ol class="hits">
+                        <h4>Scroll down and click name to see details</h4>
                         <li>
                             <img class="pic" src="images/sample.jpg" alt="Location photo">
                             <a href="individual.php">The Salvation Army</a>
@@ -124,9 +128,6 @@ Passing the page title determines what the generated header looks like. -->
                             </div>
                         </li>
                     </ol>
-                </div>
-
-                <div id="map">
                 </div>
             </div>
         </div>

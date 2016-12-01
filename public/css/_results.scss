@@ -12,7 +12,7 @@ just scroll so that they fit.
     margin: auto;
     text-align: center;
     display: flex;
-    -webkit-flex-direction: row;
+    -webkit-flex-direction: column;
     -webkit-flex-wrap: nowrap;
     -webkit-justify-content: center;
     -webkit-align-items: stretch;
@@ -82,14 +82,15 @@ The list div is on the left side of the page.
 */
     #list
     {
-        order: 1;
+        order: 2;
         padding: 10px;
-        width: 45%;
+        width: 80%;
         height: mheight;
         overflow: scroll;
-        float: left;
         text-align: left;
-        margin-bottom: 20px;
+        /*margin-bottom: 20px;*/
+        margin: auto;
+        -webkit-flex-grow: 1;
 
         ol
         {
@@ -214,16 +215,23 @@ right side of the page
 */
     #map
     {
-        order: 2;
+        order: 1;
         padding: 10px;
-        width: 45%;
+        width: 60%;
         margin: auto;
         overflow: hidden;
-        height: $mheight / 1.5;  
+        height: 40%;  
 
         #google-map
         {
             height:400px;
+            overflow: hidden;
         }
     }
+}
+
+@media (max-width: 970px) {
+}
+
+@media(max-width: 550px) {
 }
