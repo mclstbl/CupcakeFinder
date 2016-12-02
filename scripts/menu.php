@@ -20,7 +20,7 @@
             "Submit"=>"submission.php",
             "Register"=>"registration.php",
             "Sign in"=>"signin.php",
-            "Logout"=>"signin.php"
+            "Logout"=>"logout.php"
         ];
 // Move the current pageType from the array before modifying links.
         $pageHolder = $pageNames[$pageType];
