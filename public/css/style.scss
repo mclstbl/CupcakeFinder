@@ -230,9 +230,11 @@ The general look of the fields is defined here.
     }
 
     $menubuttonwidth: 89px;
+    $headerheight: 140px;
 
     #header-container
     {
+        height: $headerheight;
         #nav
         {
             ul

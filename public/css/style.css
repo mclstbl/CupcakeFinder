@@ -46,7 +46,7 @@ Header layout
   The header is always at the top of the page and has a set height
   */
   background-color: rgba(223, 217, 226, 0.8);
-  height: 180px;
+  height: 170px;
   order: 1;
   -webkit-flex-grow: 0;
   padding: 0px;
@@ -145,8 +145,7 @@ page type. All other page attributes should be uniform.
     height: 100%;
     background-color: rgba(223, 217, 226, 0.8);
     margin: auto;
-    text-align: center;
-    padding: 10px; }
+    text-align: center; }
     #content-container #search-content #search {
       padding: 10px;
       background-color: rgba(255, 255, 250, 0.3);
@@ -204,7 +203,6 @@ page type. All other page attributes should be uniform.
     background-color: rgba(223, 217, 226, 0.8);
     margin: auto;
     text-align: center;
-    padding: 10px;
     /*
     The submit input type is orange and is formatted a
     little differently from the other input fields,
@@ -339,7 +337,6 @@ page type. All other page attributes should be uniform.
     height: 100%;
     background-color: rgba(223, 217, 226, 0.8);
     margin: auto;
-    padding: 10px;
     text-align: center;
     /*
     The submit input type is orange and is formatted a
@@ -381,8 +378,7 @@ page type. All other page attributes should be uniform.
     height: 100%;
     background-color: rgba(223, 217, 226, 0.8);
     margin: auto;
-    text-align: center;
-    padding: 10px; }
+    text-align: center; }
     #content-container #submission-content #newobject {
       padding: 10px;
       background-color: rgba(255, 255, 250, 0.3);
@@ -432,7 +428,7 @@ page type. All other page attributes should be uniform.
     but in case there are many results, the contents
     just scroll so that they fit.
     */
-    height: 100%;
+    height: 80%;
     background-color: rgba(223, 217, 226, 0.8);
     margin: auto;
     text-align: center;
@@ -595,15 +591,17 @@ page type. All other page attributes should be uniform.
     font-size: 17px;
     margin: 0px; }
 
-  #header-container #nav ul {
-    width: 534px;
-    padding: 0px;
-    margin: auto; }
-    #header-container #nav ul li {
-      font-size: 14px;
-      width: 89px; }
-      #header-container #nav ul li a.menubutton {
-        padding: 10px 0px; } }
+  #header-container {
+    height: 140px; }
+    #header-container #nav ul {
+      width: 534px;
+      padding: 0px;
+      margin: auto; }
+      #header-container #nav ul li {
+        font-size: 14px;
+        width: 89px; }
+        #header-container #nav ul li a.menubutton {
+          padding: 10px 0px; } }
 @media (max-width: 550px) {
   body {
     padding: 20px 20px 20px 20px; }

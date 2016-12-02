@@ -7,11 +7,12 @@ The height of the results container is always 960px
 but in case there are many results, the contents
 just scroll so that they fit.
 */
-    height: 100%;
+    height: 80%;
     background-color: $grey;
     margin: auto;
     text-align: center;
     display: flex;
+
     -webkit-flex-direction: column;
     -webkit-flex-wrap: nowrap;
     -webkit-justify-content: center;

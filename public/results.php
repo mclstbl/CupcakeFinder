@@ -41,10 +41,11 @@ Passing the page title determines what the generated header looks like. -->
 
                 <div id="map">
                 </div>
+                
+                <h4>Scroll down and click name for details</h4>
 
                 <div id="list">
                     <ol class="hits">
-                        <h4>Scroll down and click name to see details</h4>
                         <li>
                             <img class="pic" src="images/sample.jpg" alt="Location photo">
                             <a href="individual.php">The Salvation Army</a>
