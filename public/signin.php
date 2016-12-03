@@ -1,5 +1,12 @@
 <?php
 require_once "../scripts/shared.php";
+// This page is not available in private mode so verify that user is not logged in before showing.
+// Redirect to home page otherwise.
+if (isLoggedIn()) {
+    $redirect_page =  'https://{$_SERVER["HTTP_HOST"]}/index.php/';
+    header("Location: " . $redirect_page);
+    exit();
+}
 // Define variables and set to empty values.
 $email = $password = "";
 // Validate login data if there is a POST request.
