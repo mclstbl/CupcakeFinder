@@ -14,6 +14,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
     }
     else {
 // TODO: Display login failed msg
+        session_start();
+        $_SESSION["isLoggedIn"] = false;
 // If credentials don't work then redirect to login page (this page).
         $redirect_page = $_SERVER["REQUEST_URI"];
         header("Location: " . $redirect_page);

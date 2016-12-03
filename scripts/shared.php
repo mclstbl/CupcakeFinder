@@ -6,14 +6,13 @@
 // This function checks that the user is logged in.
 function isLoggedIn() {
 // Start a new session or resume one if it exists.
-if (session_status() == PHP_SESSION_NONE)
-    session_start();
-// It returns false if no user is logged in.
-    if (!isset($_SESSION['isLoggedIn'])) {
+    if (session_status() == PHP_SESSION_NONE)
+        session_start();
+// Return false if no user isLoggedIn session var is not set.
+    if (!isset($_SESSION['isLoggedIn']))
         return false;
-    }
-// It returns true otherwise.
-    return true;
+// It returns isLoggedIn value otherwise (true if logged in, false otherwise).
+    return ($_SESSION['isLoggedIn']);
 }
 // This function queries the database for the passwordhash associated with a username.
 // It uses the salted version of the password and the username (email).
@@ -21,7 +20,8 @@ function checkPassword($username, $password) {
     try {
 // Use PDO to connect to the database.
 // TODO: log into database using a password. passwordless root is currently in use - not safe.
-        $pdo = new PDO('mysql:host=localhost;dbname=dbf', 'root', ''); // 'dbf', '123456');
+        //$pdo = new PDO('mysql:host=localhost;dbname=dbf', 'root', '');
+        $pdo = new PDO('mysql:host=localhost;dbname=dbf', 'dbf', '123456');
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 // Prepare the query.
         $query = $pdo->prepare('SELECT * FROM users
