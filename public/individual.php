@@ -1,3 +1,6 @@
+<?php
+require_once "../scripts/shared.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
