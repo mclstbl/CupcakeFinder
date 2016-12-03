@@ -18,7 +18,7 @@ function show_header($pageType) {
 // The Logout and Profile pages are only visible if user is logged in.
     if (isLoggedIn()) {
         $pageNames = [
-            "Home"=>"private.php",
+            "Home"=>"index.php",
             "Search"=>"results.php",
             "Submit"=>"submission.php",
             "Profile"=>"profile.php",

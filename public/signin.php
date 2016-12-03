@@ -8,8 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
     if (checkPassword($_POST["email"], $_POST["password"])) {
         session_start();
         $_SESSION["isLoggedIn"] = true;
-// Redirect user to private version of home page.
-        $redirect_page = preg_replace('/public\/signin.php/', 'private.php', $_SERVER["REQUEST_URI"]);
+// Redirect user to profile page.
+        $redirect_page = preg_replace('/public\/signin.php/', 'profile.php', $_SERVER["REQUEST_URI"]);
         header("Location: " . $redirect_page);
     }
     else {
