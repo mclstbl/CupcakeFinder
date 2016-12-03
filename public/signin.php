@@ -1,3 +1,26 @@
+<?php
+require_once "../scripts/shared.php";
+// Define variables and set to empty values.
+$email = $password = "";
+// Validate login data if there is a POST request.
+if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
+// Check password and set isLoggedIn session variable to true.
+    if (checkPassword($_POST["email"], $_POST["password"])) {
+        session_start();
+        $_SESSION["isLoggedIn"] = true;
+// Redirect user to private version of home page.
+        $redirect_page = preg_replace('/public\/signin.php/', 'private.php', $_SERVER["REQUEST_URI"]);
+        header("Location: " . $redirect_page);
+    }
+    else {
+// TODO: Display login failed msg
+// If credentials don't work then redirect to login page (this page).
+        $redirect_page = $_SERVER["REQUEST_URI"];
+        header("Location: " . $redirect_page);
+    }
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -22,13 +45,14 @@ Passing the page title determines what the generated header looks like. -->
             <div id="signin-content">
                 <h3>Log in to Donation Box Finder</h3>
                 <div id="sign-in">
-                    <form>
+<!-- Using the htmlspecialchars PHP function avoids HTML injection by removing escaped special chars. -->
+                    <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                         <label for="email">Email</label><br>
-                        <input id="email" type="email" placeholder="Email" required><br><br>
+                        <input id="email" name="email" type="email" placeholder="Email" required><br><br>
                         <label for="password">Password</label><br>
-                        <input id="password" type="password" placeholder="Password" required><br><br>
+                        <input id="password" name="password" type="password" placeholder="Password" required><br><br>
                         <div class="buttonHolder">
-                            <input id="submit" type="submit" value="Log in">
+                            <input id="submit" type="submit" name="login">
                         </div>
                     </form>
                 </div>
