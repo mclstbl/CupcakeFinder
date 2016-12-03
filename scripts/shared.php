@@ -1,6 +1,7 @@
 <?php
 // This file contains functions that are common between multiple pages.
-
+// Include credentials needed by the database.
+require_once "credentials.php";
 // Tell PHP not to report errors so they don't show up in the HTML pages.
 // error_reporting(0);
 // This function checks that the user is logged in.
@@ -19,12 +20,10 @@ function isLoggedIn() {
 function checkPassword($username, $password) {
     try {
 // Use PDO to connect to the database.
-// TODO: log into database using a password. passwordless root is currently in use - not safe.
-        //$pdo = new PDO('mysql:host=localhost;dbname=dbf', 'root', '');
-        $pdo = new PDO('mysql:host=localhost;dbname=dbf', 'dbf', '123456');
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $db = getDB();
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 // Prepare the query.
-        $query = $pdo->prepare('SELECT * FROM users
+        $query = $db->prepare('SELECT * FROM users
             WHERE username = :username
             and passwordhash = SHA2(CONCAT( :password , `salt`), 0)
             ');
