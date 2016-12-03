@@ -15,12 +15,13 @@ function show_header($pageType) {
         $pageType = "Search";
     $pageNames = [];
 // Redirect to private home page if user is logged in.
-// The Logout option is only visible if user is logged in.
+// The Logout and Profile pages are only visible if user is logged in.
     if (isLoggedIn()) {
         $pageNames = [
             "Home"=>"private.php",
             "Search"=>"results.php",
             "Submit"=>"submission.php",
+            "Profile"=>"profile.php",
             "Logout"=>"logout.php"
        ];
     }
@@ -51,12 +52,13 @@ function show_header($pageType) {
                 $pageNames
             );
             break;
-// The Search, Register, Sign in and Submit pages are in a subdirectory so
+// The Search, Register, Sign in, Profile and Submit pages are in a subdirectory so
 // the Home link is prepended to point to the parent directory.
         case "Search":
         case "Register":
         case "Sign in":
         case "Submit":
+        case "Profile":
             $pageNames["Home"] = "../" . $pageNames["Home"];
             break;
     }
