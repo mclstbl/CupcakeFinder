@@ -99,7 +99,7 @@ Navigation bar attributes
         {
             list-style-type: none;
             overflow: hidden;
-            width: $menubuttonwidth * 6;
+            width: $menubuttonwidth * $nummenubuttons;
             margin: auto;
 
             li
@@ -239,7 +239,7 @@ The general look of the fields is defined here.
         {
             ul
             {
-                width: $menubuttonwidth * 6;
+                width: $menubuttonwidth * $nummenubuttons;
                 padding: 0px;
                 margin: auto;
 
@@ -277,7 +277,7 @@ The general look of the fields is defined here.
 
             ul
             {
-                width: $menubuttonwidth * 6;
+                width: $menubuttonwidth * $nummenubuttons;
                 margin: auto;
                 padding: 0px;
 

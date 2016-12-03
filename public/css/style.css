@@ -70,7 +70,7 @@ Header layout
     #header-container #nav ul {
       list-style-type: none;
       overflow: hidden;
-      width: 600px;
+      width: 500px;
       margin: auto; }
       #header-container #nav ul li {
         width: 100px;
@@ -594,7 +594,7 @@ page type. All other page attributes should be uniform.
   #header-container {
     height: 140px; }
     #header-container #nav ul {
-      width: 534px;
+      width: 445px;
       padding: 0px;
       margin: auto; }
       #header-container #nav ul li {
@@ -613,7 +613,7 @@ page type. All other page attributes should be uniform.
       -webkit-justify-content: center;
       -webkit-align-items: stretch; }
       #header-container #nav ul {
-        width: 343.98px;
+        width: 286.65px;
         margin: auto;
         padding: 0px; }
         #header-container #nav ul li {
