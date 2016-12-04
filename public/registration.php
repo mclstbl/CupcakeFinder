@@ -19,11 +19,13 @@ if (isLoggedIn()) {
 if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 // Validate and process posted input values here
     if(processData($_POST)) {
-        // insert into users table
-        echo ("<script>alert('Registration complete');</script>");
-    }
-    else {
-        // echo ('FORM IS NOT GOOD');
+        if (! userExists($email)) {
+            addUser($email, $password, $firstname, $lastname, $zipcode, $birthday);
+            echo ("<script>alert('Registration complete');</script>");
+        }
+        else {
+            echo ("<script>alert('Registration failed - user already exists');</script>");
+        }
     }
 }
 ?>

@@ -73,6 +73,7 @@ function validateData($field, $val) {
         case "zipcode":
             $pattern = '/^[a-zA-Z]{1}[0-9]{1}[a-zA-Z]{1}\s*[0-9]{1}[a-zA-Z]{1}[0-9]{1}$/';
             if (!isset($_POST[$field]) || $_POST[$field] == "") {
+                $zipcode = NULL;
                 break;
             }
             else if (preg_match($pattern, $val) === 1) {
@@ -83,6 +84,11 @@ function validateData($field, $val) {
                 return false;
             }
             break;
+        case "birthday":
+            if (!isset($_POST[$field]) || $_POST[$field] == "") {
+                $birthday = NULL;
+                break;
+            }
     }
 // Return true if you get to this point without issues.
     return true;

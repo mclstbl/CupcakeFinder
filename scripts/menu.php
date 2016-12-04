@@ -66,8 +66,7 @@ function show_header($pageType) {
     $pageNames[$pageType] = $pageHolder;
 
 // The header is the same for all nav bars.
-    echo ('<div id="alert"></div>'
-        . '<h1 id="headertitle"><a href=' . $pageNames["Home"] . ' >Donation Box Finder</a></h1>'
+    echo ('<h1 id="headertitle"><a href=' . $pageNames["Home"] . ' >Donation Box Finder</a></h1>'
         . '<h2 id="headersubtitle">Find donation centres near you</h2>'
         . '<div id="nav">'
         . '<ul>');
