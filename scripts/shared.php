@@ -75,8 +75,19 @@ function addUser($email, $password, $firstname, $lastname, $zipcode, $birthday) 
             VALUES(:email, `salt`, SHA2(CONCAT(:password, `salt`), 0),:firstname, :lastname, :zipcode, :birthday)');
 // Execute the query using passed in values as parameters.
         $query->execute(array(':email' => $email, ':password' => $password, ':firstname' => $firstname, ':lastname' => $lastname, ':zipcode' => $zipcode, ':birthday' => $birthday));
+
+        return true;
     }
     catch (PDOException $e) {
     }
+
+    return false;
+}
+
+// Redisplays submitted POST fields in forms.
+function rePOST($field) {
+// Return the htmlspecialchars version of the field value to avoid injection,
+// or empty string if the field is not set.
+    echo isset($_POST[$field]) ? htmlspecialchars($_POST[$field]) : '';
 }
 ?>

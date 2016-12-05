@@ -21,7 +21,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
     if(processData($_POST)) {
         if (! userExists($email)) {
             addUser($email, $password, $firstname, $lastname, $zipcode, $birthday);
-            echo ("<script>alert('Registration complete');</script>");
+            echo "add user success";
+            $redirect_page =  'https://{$_SERVER["HTTP_HOST"]}/public/signin.php/';
+            header("Location: " . $redirect_page);
         }
         else {
             echo ("<script>alert('Registration failed - user already exists');</script>");
@@ -54,42 +56,42 @@ Passing the page title determines what the generated header looks like. -->
                 <div id="sign-up">
                     <form name="register" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                         <label for="firstname">First Name</label><br>
-                        <input id="firstname" name="firstname" type="text" placeholder="First Name" value="<?php echo isset($_POST['firstname']) ? $_POST['firstname'] : '' ?>"><br>
+                        <input id="firstname" name="firstname" type="text" placeholder="First Name" value="<?php rePOST('firstname'); ?>"><br>
                         <span class="error">
                             <?php
                                 echo $firstnameError;
                             ?>
                         </span><br>
                         <label for="lastname">Last Name</label><br>
-                        <input id="lastname" name="lastname" type="text" placeholder="Last Name" value="<?php echo isset($_POST['lastname']) ? $_POST['lastname'] : '' ?>"><br>
+                        <input id="lastname" name="lastname" type="text" placeholder="Last Name" value="<?php rePOST('lastname'); ?>"><br>
                         <span class="error">
                             <?php
                                 echo $lastnameError;
                             ?>
                         </span><br>
                         <label for="email">Email</label><br>
-                        <input id="email" name="email" type="email" placeholder="Email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : '' ?>"><br>
+                        <input id="email" name="email" type="email" placeholder="Email" value="<?php rePOST('email'); ?>"><br>
                         <span class="error">
                             <?php
                                 echo $emailError;
                             ?>
                         </span><br>
                         <label for="password">Password</label><br>
-                        <input id="password" name="password" type="password" placeholder="Password" value="<?php echo isset($_POST['password']) ? $_POST['password'] : '' ?>"><br>
+                        <input id="password" name="password" type="password" placeholder="Password" value="<?php rePOST('password'); ?>"><br>
                         <span class="error">
                             <?php
                                 echo $passwordError;
                             ?>
                         </span><br>
                         <label for="zipcode">Zip Code</label><br>
-                        <input id="zipcode" name="zipcode" type="text" placeholder="ZIP Code" value="<?php echo isset($_POST['zipcode']) ? $_POST['zipcode'] : '' ?>"><br>
+                        <input id="zipcode" name="zipcode" type="text" placeholder="ZIP Code" value="<?php rePOST('zipcode'); ?>"><br>
                         <span class="error">
                             <?php
                                 echo $zipcodeError;
                             ?>
                         </span><br>
                         <label for="birthday">Birthday</label><br>
-                        <input id="birthday" name="birthday" type="date" value="<?php echo isset($_POST['birthday']) ? $_POST['birthday'] : '' ?>"><br>
+                        <input id="birthday" name="birthday" type="date" value="<?php rePOST('birthday'); ?>"><br>
                         <span class="error">
                             <?php
                                 echo $birthdayError;
