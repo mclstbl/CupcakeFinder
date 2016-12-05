@@ -20,10 +20,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 // Validate and process posted input values here
     if(processData($_POST)) {
         if (! userExists($email)) {
-            addUser($email, $password, $firstname, $lastname, $zipcode, $birthday);
-            echo "add user success";
-            $redirect_page =  'https://{$_SERVER["HTTP_HOST"]}/public/signin.php/';
-            header("Location: " . $redirect_page);
+            if (addUser($email, $password, $firstname, $lastname, $zipcode, $birthday)) {
+                session_start();
+                $_SESSION["isLoggedIn"] = true;
+// Redirect user to profile page.
+                $redirect_page = preg_replace('/registration.php/', 'profile.php', $_SERVER["REQUEST_URI"]);
+                header("Location: " . $redirect_page);
+            }
         }
         else {
             echo ("<script>alert('Registration failed - user already exists');</script>");
@@ -102,7 +105,7 @@ Passing the page title determines what the generated header looks like. -->
                             <input id="submit" type="submit" name="signup">
                         </div>
                     </form>
-                    <p id="signin">Already have an account? Sign in <a href="signin.php">here</a></p>
+                    <p id="signin">Already have an account? Sign in <a href="signin.php">here</a>.</p>
                 </div>
             </div>
         </div>
