@@ -31,21 +31,22 @@ A checkbox is used for each so multiple values can be selected in a single searc
                     <div id="options">
                         <legend>Donate </legend>
                         <fieldset>
-                        <input id="clothing" type="checkbox" name="clothing" value="<?php rePOST('clothing'); ?>" >
+                        <input id="clothing" type="checkbox" name="clothing" value="<?php echo (rePOST('clothing')); ?>" >
                         <label for="clothing"> Clothing</label>
-                        <input id="electronics" type="checkbox" name="electronics" value="<?php rePOST('electronics'); ?>">
+                        <input id="electronics" type="checkbox" name="electronics" value="<?php echo (rePOST('electronics')); ?>">
                         <label for="electronics"> Electronics</label>
-                        <input id="food" type="checkbox" name="food" value="<?php rePOST('food'); ?>">
+                        <input id="food" type="checkbox" name="food" value="<?php echo (rePOST('food')); ?>">
                         <label for="food"> Food</label><br>
                         </fieldset><br>
 <!-- The "rating" dropdown menu allows a user to filter displayed results according to minimum rating. -->
                         <label for="rating">Minimum Rating</label><br>
-                        <select id="rating" name="stars" value="<?php rePOST('stars'); ?>">
-                          <option value=5>☆☆☆☆☆</option>
-                          <option value=4>☆☆☆☆</option>
-                          <option value=3>☆☆☆</option>
-                          <option value=2>☆☆</option>
-                          <option value=1>☆</option>
+                        <select id="rating" name="stars" value="<?php echo (rePOST('stars')); ?>">
+                            <option value=1>Pick rating</option>
+                            <option value=5>☆☆☆☆☆</option>
+                            <option value=4>☆☆☆☆</option>
+                            <option value=3>☆☆☆</option>
+                            <option value=2>☆☆</option>
+                            <option value=1>☆</option>
                         </select><br>
 <!-- This is an input field where users can enter their desired location. Entering a specific location overrides the default value,
 which is the user's current location. -->
