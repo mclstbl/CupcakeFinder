@@ -8,9 +8,12 @@ $stars = 1;
 $latitude = 0;
 $longitude = 0;
 
-$results = getPlaces($_POST);
+$results = null;
+if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
+    $results = getPlaces($_POST);
+}
 
-//echo ($clothing . ' ' . $electronics . ' ' . $food . ' ' . $stars . ' ' . $latitude . ' ' . $longitude . ' ');
+// echo ($clothing . ' ' . $electronics . ' ' . $food . ' ' . $stars . ' ' . $latitude . ' ' . $longitude . ' ');
 ?>
 <!DOCTYPE php>
 <php lang="en">
@@ -59,7 +62,7 @@ Passing the page title determines what the generated header looks like. -->
 
                 <div id="list">
                     <ol class="hits">
-                        <?php printSearchResults($results); ?>
+                        <?php if($results != null) printSearchResults($results); ?>
                     </ol>
                 </div>
             </div>

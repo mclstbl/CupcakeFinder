@@ -44,7 +44,8 @@ function checkPassword($username, $password) {
 }
 
 // This function returns true if user's email already exists in the dbf database; returns false otherwise.
-function userExists($email) {try {
+function userExists($email) {
+    try {
 // Use PDO to connect to the database.
         $db = getDB();
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -86,15 +87,19 @@ function addUser($email, $password, $firstname, $lastname, $zipcode, $birthday) 
 function getPlaces($method) {
 // Set variables according to POSTed values.
     if (isset($method['clothing']) and $method['clothing']) {
+        global $clothing;
         $clothing = true;
     }
     if (isset($method['electronics']) and $method['electronics']) {
+        global $electronics;
         $electronics = true;
     }
     if (isset($method['food']) and $method['food']) {
+    global $food;
         $food = true;
     }
     if (isset($method['stars'])) {
+        global $stars;
         $stars = $method['stars'];
     }
 // Split location coordinates string into longitude and latitude floats.
@@ -118,11 +123,9 @@ function getPlaces($method) {
         $query->execute(array(':stars' => $stars));
 // This would return true if exactly one match is found in the database.
         //return $query->rowCount();
-        return $query->fetchAll();;
+        return $query->fetchAll();
     }
     catch (PDOException $e) {}
-
-// return array of places
 }
 
 // This function takes a rating (from database) and returns the string of stars corresponding to it.
@@ -178,8 +181,10 @@ function printSearchResults($query) {
     foreach ($query as $row) {
         echo(
         '<li>
-                <img class="pic" src="images/sample.jpg" alt="Location photo">
-                <a href="individual.php">'
+                <img class="pic" src="' . $row['photo'] . '" alt="Location photo">
+                <a href="individual.php/?place_id='
+                . $row['place_id']
+                . '">'
                 . $row['placename']
                 . '</a>
                 
@@ -342,5 +347,86 @@ function addPlace($method, $photourl) {
         'electronics'=>$electronics, 'food'=>$food, 'latitude'=>$latitude,
         'longitude'=>$longitude, 'photo'=>$photourl)));
     return false;
+}
+
+// Prints user reviews in individual pages.
+function generateReviews($p_id) {
+    $db = getDB();
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    error_reporting(E_ALL);
+
+// Prepare the select query.
+    $query = $db->prepare('SELECT * FROM reviews where place_id=:place_id');
+// Execute the query using passed in values as parameters.
+    $query->execute(array('place_id'=>$p_id));
+    $info = $query->fetchAll();
+
+    echo '<div id="reviewpane">';
+    foreach ($info as $row) {
+        echo '<div class="review">
+                <div class="user">
+                    <img src='
+            . $row["photo"]
+            . 'alt="User photo">
+                    <h4>' 
+            . $row["username"] 
+            . '</h4>
+                </div>
+                <div class="star-rating">'
+            . printStars($row['stars'])
+            . '</div>
+                <div class="comment">'
+            . $row["review"]
+            .'
+                </div>
+            </div>';
+    }
+    echo '</div>';
+}
+
+// Gets the place's name for title printing.
+function getName($p_id) {
+    $db = getDB();
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    error_reporting(E_ALL);
+
+// Prepare the select query.
+    $query = $db->prepare('SELECT * FROM places where place_id=:place_id');
+// Execute the query using passed in values as parameters.
+    $query->execute(array('place_id'=>$p_id));
+    $info = $query->fetchAll();
+
+    return $info[0]['placename'];
+}
+
+// Generates individual pages.
+function generateIndividual($p_id) {
+    $db = getDB();
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    error_reporting(E_ALL);
+
+// Prepare the select query.
+    $query = $db->prepare('SELECT * FROM places where place_id=:place_id');
+// Execute the query using passed in values as parameters.
+    $query->execute(array('place_id'=>$p_id));
+    $info = $query->fetchAll();
+
+    echo '<h3 id="placename">'
+    . $info[0]["placename"]
+    . ' </h3>
+        <h4>'
+    .       $info[0]["address"]
+    . ' </h4>
+    <div id="productpane">
+        <div id="description">'
+            . $info[0]["description"]
+    .   '</div>'
+    .   '<div id="pictures"><img id="pic" src="'
+        . $info[0]["photo"]
+        . '" alt="Photo of location">
+        </div>
+        <div id="map">
+        </div>
+    </div>';
 }
 ?>

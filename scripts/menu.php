@@ -52,7 +52,7 @@ function show_header($pageType) {
                 $pageNames
             );
             break;
-// The Search, Register, Sign in, Profile and Submit pages are in a subdirectory so
+// The Search, Register, Sign in, Profile, Individual and Submit pages are in a subdirectory so
 // the Home link is prepended to point to the parent directory.
         case "Search":
         case "Register":

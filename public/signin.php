@@ -1,5 +1,7 @@
 <?php
 require_once "../scripts/shared.php";
+require_once "../scripts/menu.php";
+
 // This page is not available in private mode so verify that user is not logged in before showing.
 // Redirect to home page otherwise.
 if (isLoggedIn()) {
@@ -34,7 +36,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 <html lang="en">
     <head>
         <?php
-            require "../scripts/menu.php";
             show_title("Sign in");
         ?>
         <link rel="stylesheet" href="css/style.css">
@@ -45,7 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 <!-- The menu.php show_header function is used to generate the nav bar.
 Passing the page title determines what the generated header looks like. -->
             <?php
-                require_once "../scripts/menu.php";
                 show_header("Sign in");
             ?>
         </div>

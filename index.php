@@ -12,7 +12,7 @@ require_once "scripts/menu.php";
         <link rel="stylesheet" href="public/css/style.css">
         <script type ="text/javascript" src="scripts/index.js"></script>
     </head>
-    <body onload="getLocation();">
+    <body>
 <!-- The header-container div contains the navigation tabs and the title of this website. -->
         <div id="header-container">
 <!-- The menu.php show_header function is used to generate the nav bar.
@@ -54,14 +54,14 @@ which is the user's current location. -->
                         <input id="location" type="text" name="location" placeholder="My Location" value="<?php rePOST('location'); ?>"><br>
 <!-- This button gets the user's location when clicked. -->
                         <div class="buttonHolder">
-                            <button type="button" id="geolocation" onClick="getLocation()">Get my location</button>
+                            <button type="button" id="geolocation" onClick="getLocation()">Get my location</button> <!---->
                         </div>
 <!-- The status div is where the geolocation error messages are displayed,
 if they exist -->
                         <p id="status"></p>
 <!-- By default, the Submit button searches for donation centres near a user's location. -->
                         <div class="buttonHolder">
-                            <input type="submit" value="Search" onclick="submitSearchForm">
+                            <input type="submit" value="Search" onClick="if (document.getElementById('location') == '') getLocation()">
                         </div>
                     </div>
                 </form>
