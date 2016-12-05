@@ -19,7 +19,7 @@ function show_header($pageType) {
     if (isLoggedIn()) {
         $pageNames = [
             "Home"=>"index.php",
-            "Search"=>"results.php",
+            "Search"=>"search.php",
             "Submit"=>"submission.php",
             "Profile"=>"profile.php",
             "Logout"=>"logout.php"
@@ -30,7 +30,7 @@ function show_header($pageType) {
     else {
         $pageNames = [
             "Home"=>"index.php",
-            "Search"=>"results.php",
+            "Search"=>"search.php",
             "Submit"=>"submission.php",
             "Register"=>"registration.php",
             "Sign in"=>"signin.php"
