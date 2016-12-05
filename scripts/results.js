@@ -5,9 +5,9 @@
 
 // Hard-coded locations
 var locations = [
-    {lat: 43.2605738, lng: -79.9304626},
-    {lat: 44.2605738, lng: -80.9304626},
-    {lat: 45.2605738, lng: -79.9304626}
+    {lat: 43.2605738, lng: -79.9304626, test: ''},
+    {lat: 44.2605738, lng: -80.9304626, test: ''},
+    {lat: 45.2605738, lng: -79.9304626, test: ''}
 ];
 
 // InfoWindow sample content string describing object.
@@ -51,7 +51,8 @@ function initMap(position) {
     }
 }
 
-window.onload = function() {
+//window.onload = function() {
+function loadMap() {
 // Get current location and load map.
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(initMap);
