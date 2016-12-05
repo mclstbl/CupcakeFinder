@@ -1,24 +1,23 @@
 <?php
 require_once "scripts/shared.php";
+require_once "scripts/menu.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <?php
-            require "scripts/menu.php";
             show_title("Home");
         ?>
         <link rel="icon" href="public/images/logo.png">
         <link rel="stylesheet" href="public/css/style.css">
         <script type ="text/javascript" src="scripts/index.js"></script>
     </head>
-    <body>
+    <body onload="getLocation();">
 <!-- The header-container div contains the navigation tabs and the title of this website. -->
         <div id="header-container">
 <!-- The menu.php show_header function is used to generate the nav bar.
 Passing the page title determines what the generated header looks like. -->
             <?php
-                require_once "scripts/menu.php";
                 show_header("Home");
             ?>
         </div>
@@ -26,32 +25,32 @@ Passing the page title determines what the generated header looks like. -->
         <div id="content-container">
             <div id="search-content">
                 <h3>Start your search here</h3>
-                <form id="search" action="public/results.php#results-container">
+                <form id="search" method="POST" action="public/search.php">
 <!-- The following fieldset presents the different types of donation centres for which the user may perform a search.
 A checkbox is used for each so multiple values can be selected in a single search. -->
                     <div id="options">
                         <legend>Donate </legend>
                         <fieldset>
-                        <input id="clothing" type="checkbox" value="clothing">
+                        <input id="clothing" type="checkbox" name="clothing" value="<?php rePOST('clothing'); ?>" >
                         <label for="clothing"> Clothing</label>
-                        <input id="electronics" type="checkbox" value="electronics">
+                        <input id="electronics" type="checkbox" name="electronics" value="<?php rePOST('electronics'); ?>">
                         <label for="electronics"> Electronics</label>
-                        <input id="food" type="checkbox" value="food">
+                        <input id="food" type="checkbox" name="food" value="<?php rePOST('food'); ?>">
                         <label for="food"> Food</label><br>
                         </fieldset><br>
 <!-- The "rating" dropdown menu allows a user to filter displayed results according to minimum rating. -->
                         <label for="rating">Minimum Rating</label><br>
-                        <select id="rating" name="starlist">
-                          <option value="five">☆☆☆☆☆</option>
-                          <option value="four">☆☆☆☆</option>
-                          <option value="three">☆☆☆</option>
-                          <option value="two">☆☆</option>
-                          <option value="one">☆</option>
+                        <select id="rating" name="stars" value="<?php rePOST('stars'); ?>">
+                          <option value=5>☆☆☆☆☆</option>
+                          <option value=4>☆☆☆☆</option>
+                          <option value=3>☆☆☆</option>
+                          <option value=2>☆☆</option>
+                          <option value=1>☆</option>
                         </select><br>
 <!-- This is an input field where users can enter their desired location. Entering a specific location overrides the default value,
 which is the user's current location. -->
                         <label for="location">Near </label><br>
-                        <input id="location" type="text" name="location" placeholder="My Location"><br>
+                        <input id="location" type="text" name="location" placeholder="My Location" value="<?php rePOST('location'); ?>"><br>
 <!-- This button gets the user's location when clicked. -->
                         <div class="buttonHolder">
                             <button type="button" id="geolocation" onClick="getLocation()">Get my location</button>
@@ -61,7 +60,7 @@ if they exist -->
                         <p id="status"></p>
 <!-- By default, the Submit button searches for donation centres near a user's location. -->
                         <div class="buttonHolder">
-                            <input type="submit" value="Search">
+                            <input type="submit" value="Search" onclick="submitSearchForm">
                         </div>
                     </div>
                 </form>

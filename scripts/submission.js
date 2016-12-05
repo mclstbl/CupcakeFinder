@@ -15,8 +15,8 @@ function getLocation() {
 function showPosition(position) {
     document.getElementById("latitude").placeholder = "";
     document.getElementById("longitude").placeholder = "";
-    document.getElementById("latitude").value = position.coords.latitude;
-    document.getElementById("longitude").value = position.coords.longitude;
+    document.getElementById("latitude").value = position.coords.latitude.toFixed(3);
+    document.getElementById("longitude").value = position.coords.longitude.toFixed(3);
 }
 
 // This function displays messages that explain errors in using the

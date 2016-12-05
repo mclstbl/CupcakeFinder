@@ -1,21 +1,55 @@
 <?php
 require_once "../scripts/shared.php";
 require_once "../scripts/menu.php";
+require("../scripts/S3.php");
+
+$placenameError = $latitudeError = $longitudeError = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" and !empty($_POST)) {
+    $photourl = "";
+    if (file_exists($_FILES['newphoto']['tmp_name'])) {
+        $photourl = uploadToS3($_FILES['newphoto']['tmp_name']);
+    }
+// If the place is successfully added to the database, redirect to the object's page.
+    if (addPlace($_POST, $photourl)) {
+        //$redirect_page =  'https://{$_SERVER["HTTP_HOST"]}/public\/signin.php/';
+        //header("Location: " . $redirect_page);
+        //exit();
+    }
+}
 
 
 // This function shows user a submission form if they are signed in.
 // It shows the registration link otherwise.
 function newObject() {
+    global $placenameError, $latitudeError, $longitudeError;
     if (isLoggedIn()) {
-        echo '<form>
+        echo '<form method="POST" action="submission.php" enctype="multipart/form-data">
             <label for="name">Name of Organization</label><br>
-            <input id="name" type="text" placeholder="Name of donation centre" required><br><br>
+            <input id="name" name="placename" type="text" placeholder="Name of donation centre" value="' . rePOST("placename") . '"><br>
+            <span class="error">
+                <?php
+                    echo ' . $placenameError . '
+                ?>
+            </span><br>
             <label for="description">Description</label><br>
-            <input id="description" placeholder="Description"><br><br>
+            <input id="description" name="description" placeholder="Description" value="' . rePOST("description") . '"><br><br>
+            <label for="address">Address</label><br>
+            <input id="addess" name="address" placeholder="Address" value="' . rePOST("address") . '"><br><br>
             <label for="latitude">Latitude</label><br>
-            <input id="latitude" type="number" placeholder="Latitude position" pattern="-[0-9]+\.[0-9]+"><br><br>
+            <input id="latitude" name="latitude" type="number" step="0.001" placeholder="Latitude position" pattern="-[0-9]+\.[0-9]+" value="' . rePOST("latitude") . '"><br>
+            <span class="error">
+                <?php
+                    echo $latitudeError;
+                ?>
+            </span><br>
             <label for="longitude">Longitude</label><br>
-            <input id="longitude" type="number" placeholder="Longitude position" pattern="-[0-9]+\.*[0-9]*"><br><br>
+            <input id="longitude" name="longitude" type="number" step="0.001" placeholder="Longitude position" pattern="-[0-9]+\.*[0-9]*" value="' . rePOST("longitude") . '"><br>
+            <span class="error">
+                <?php
+                    echo $longitudeError;
+                ?>
+            </span><br>
         <!-- This button gets the user location when clicked. -->
             <div class="buttonHolder">
                 <button type="button" id="geolocation" onClick="getLocation()">Get my location</button>
@@ -23,15 +57,15 @@ function newObject() {
             <p id="status"</p>
             <legend>Accepts</legend>
             <fieldset>
-                <input id="clothing" type="checkbox" value="clothing"><label for="clothing"> Clothing</label>
-                <input id="electronics" type="checkbox" value="electronics"><label for="electronics"> Electronics</label>
-                <input id="food" type="checkbox" value="food"><label for="food"> Food</label>
+                <input id="clothing" name="clothing" type="checkbox" value="clothing"><label for="clothing"> Clothing</label>
+                <input id="electronics" name="electronics" type="checkbox" value="electronics"><label for="electronics"> Electronics</label>
+                <input id="food" name="food" type="checkbox" value="food"><label for="food"> Food</label>
             </fieldset>
             <br>
             
             <div class="buttonHolder">
                 <label for="image">Upload photo</label><br>
-                <input id="image" type="file" accept="image/*"><br>
+                <input id="image" type="file" name="newphoto" value="' . rePOST("newphoto") . '"><br>
                 <input id="submit" type="submit" value="Submit">
             </div>
         </form>';
@@ -65,7 +99,9 @@ Passing the page title determines what the generated header looks like. -->
             <div id="submission-content">
                 <h3>Submit a donation centre location</h3>
                 <div id="newobject">
-                    <?php newObject() ?>
+                    <?php
+                        newObject();
+                    ?>
                 </div>
             </div>
         </div>
