@@ -2,107 +2,54 @@
 require_once "../scripts/shared.php";
 require_once "../scripts/menu.php";
 
-// Prints user reviews in individual pages.
-function generateReviews($p_id) {
-    $db = getDB();
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    error_reporting(E_ALL);
-
-// Prepare the select query.
-    $query = $db->prepare('SELECT * FROM reviews where place_id=:place_id');
-// Execute the query using passed in values as parameters.
-    $query->execute(array('place_id'=>$p_id));
-    $info = $query->fetchAll();
-
-    echo '<div id="reviewpane">';
-    foreach ($info as $row) {
-        echo '<div class="review">
-                <div class="user">
-                    <img src='
-            . $row["photo"]
-            . 'alt="User photo">
-                    <h4>' 
-            . $row["username"] 
-            . '</h4>
-                </div>
-                <div class="star-rating">'
-            . printStars($row['stars'])
-            . '</div>
-                <div class="comment">'
-            . $row["review"]
-            .'
-                </div>
-            </div>';
-    }
-    echo '</div>';
-}
-
-// Gets the place's name for title printing.
-function getName($p_id) {
-    $db = getDB();
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    error_reporting(E_ALL);
-
-// Prepare the select query.
-    $query = $db->prepare('SELECT * FROM places where place_id=:place_id');
-// Execute the query using passed in values as parameters.
-    $query->execute(array('place_id'=>$p_id));
-    $info = $query->fetchAll();
-
-    return $info[0]['placename'];
-}
-
-// Generates individual pages.
-function generateIndividual($p_id) {
-    $db = getDB();
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    error_reporting(E_ALL);
-
-// Prepare the select query.
-    $query = $db->prepare('SELECT * FROM places where place_id=:place_id');
-// Execute the query using passed in values as parameters.
-    $query->execute(array('place_id'=>$p_id));
-    $info = $query->fetchAll();
-
-    print_r($info);
-    echo '<h3 id="placename">'
-    . $info[0]["placename"]
-    . ' </h3>
-        <h4>'
-    .       $info[0]["address"]
-    . ' </h4>
-    <div id="productpane">
-        <div id="description">'
-            . $info[0]["description"]
-    .   '</div>'
-    .   '<div id="pictures"><img id="pic" src="'
-        . $info[0]["photo"]
-        . '" alt="Photo of location">
-        </div>
-        <div id="map">
-        </div>
-    </div>';
+function generateHeader() {
+    echo '<html lang="en">
+    <head>'
+    . show_title(getName($_GET['place_id']))
+    . '
+        <link rel="stylesheet" href="' 
+    . 'https://' . $_SERVER["HTTP_HOST"] . '/DonationBoxFinder/public/css/style.css'
+    .'">
+        <link rel="icon" href="'
+    . 'https://' . $_SERVER["HTTP_HOST"] . '/DonationBoxFinder/public/images/logo.png'
+    . '">
+        <script type ="text/javascript" src="'
+    . 'https://' . $_SERVER["HTTP_HOST"] . '/DonationBoxFinder/scripts/individual.js'
+    . '"></script>
+        <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA10vc2deGv18oPyOA1w1k7H6i7mAIzMuA" type="text/javascript"></script>
+    </head>
+        <body>
+        <div id="header-container">
+            <div id="header-container">
+            <h1 id="headertitle"><a href='
+            . 'https://' . $_SERVER["HTTP_HOST"] . '/DonationBoxFinder/index.php'
+            .' >Donation Box Finder</a></h1>
+            <h2 id="headersubtitle">Find donation centres near you</h2>
+            <div id="nav"><ul>
+                <li><a class="menubutton" href="'
+            . 'https://' . $_SERVER["HTTP_HOST"] . '/DonationBoxFinder/index.php'
+            .'">Home</a></li>
+                <li><a class="menubutton" id="active" href="'
+            . 'https://' . $_SERVER["HTTP_HOST"] . '/DonationBoxFinder/public/search.php'
+            .'">Search</a></li>
+                <li><a class="menubutton" href="'
+            . 'https://' . $_SERVER["HTTP_HOST"] . '/DonationBoxFinder/public/submission.php'
+            .'">Submit</a></li>
+                <li><a class="menubutton" href="'
+            . 'https://' . $_SERVER["HTTP_HOST"] . '/DonationBoxFinder/public/profile.php'
+            .'">Profile</a></li>
+                <li><a class="menubutton" href="'
+            .  'https://' . $_SERVER["HTTP_HOST"] . '/DonationBoxFinder/scripts/logout.php'
+            .'">Logout</a></li>';
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <?php
-            show_title(getName($_GET['place_id']));
-        ?>
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="icon" href="images/logo.png">
-        <script type ="text/javascript" src="../scripts/individual.js"></script>
-        <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA10vc2deGv18oPyOA1w1k7H6i7mAIzMuA" type="text/javascript"></script>
-    </head>
-    <body>
-        <div id="header-container">
-<!-- The menu.php show_header function is used to generate the nav bar.
-Passing the page title determines what the generated header looks like. -->
-            <?php
-                require_once "../scripts/menu.php";
-                show_header("Search");
-            ?>
+<?php
+    generateHeader();
+?>
+            </ul>
+            </div>
+            </div>
         </div>
         
         <div id="content-container">
