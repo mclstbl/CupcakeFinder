@@ -10,8 +10,32 @@ $longitude = 0;
 
 $results = null;
 if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
-    $results = getPlaces($_POST);
+// Set variables according to POSTed values.
+    if (isset($method['clothing']) and $method['clothing']) {
+        global $clothing;
+        $clothing = true;
+    }
+    if (isset($method['electronics']) and $method['electronics']) {
+        global $electronics;
+        $electronics = true;
+    }
+    if (isset($method['food']) and $method['food']) {
+    global $food;
+        $food = true;
+    }
+    if (isset($method['stars'])) {
+        global $stars;
+        $stars = $method['stars'];
+    }
+// Split location coordinates string into longitude and latitude floats.
+    if (isset($method['location']) and $method['location'] != '') {
+        $loc = explode(',', $method['location']);
+        global $longitude, $latitude;
+        $longitude = (float) $loc[0];
+        $latitude = (float) $loc[1];
+    }
 }
+$results = getPlaces();
 
 // echo ($clothing . ' ' . $electronics . ' ' . $food . ' ' . $stars . ' ' . $latitude . ' ' . $longitude . ' ');
 ?>
