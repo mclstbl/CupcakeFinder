@@ -178,12 +178,14 @@ function printTypes($c, $e, $f) {
 // It uses the data found in the database to generate HTML code.
 function printSearchResults($query) {
 // Generate HTML card for query results.
+    //print_r($query[0]);
     foreach ($query as $row) {
+     //   echo $row[0];
         echo(
         '<li>
                 <img class="pic" src="' . $row['photo'] . '" alt="Location photo">
                 <a href="individual.php/?place_id='
-                . $row['place_id']
+                . $row[0]
                 . '">'
                 . $row['placename']
                 . '</a>
