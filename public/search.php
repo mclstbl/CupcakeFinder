@@ -4,7 +4,7 @@ require_once "../scripts/menu.php";
 
 // Default values always return something because they search for the minimum criteria.
 $clothing = $electronics = $food = false;
-$stars = 1;
+$stars = 0;
 $latitude = 0;
 $longitude = 0;
 
@@ -35,8 +35,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
         $latitude = (float) $loc[1];
     }
 }
-$results = getPlaces();
-
 // echo ($clothing . ' ' . $electronics . ' ' . $food . ' ' . $stars . ' ' . $latitude . ' ' . $longitude . ' ');
 ?>
 <!DOCTYPE php>
@@ -47,8 +45,7 @@ $results = getPlaces();
         ?>
         <link rel="stylesheet" href="css/style.css">
         <link rel="icon" href="images/logo.png">
-        <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA10vc2deGv18oPyOA1w1k7H6i7mAIzMuA" type="text/javascript"
-            locations="<?php echo json_encode(htmlentities($results));?>"></script>
+        <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA10vc2deGv18oPyOA1w1k7H6i7mAIzMuA" type="text/javascript"></script>
         <script type ="text/javascript" src="../scripts/results.js"></script>
     </head>
     <body onload="loadMap()">
@@ -86,7 +83,9 @@ Passing the page title determines what the generated header looks like. -->
 
                 <div id="list">
                     <ol class="hits">
-                        <?php if($results != null) printSearchResults($results); ?>
+                        <?php 
+                            getPlaces();
+                        ?>
                     </ol>
                 </div>
             </div>

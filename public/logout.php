@@ -2,6 +2,7 @@
 // Reset session.
 session_start();
 unset($_SESSION['isLoggedIn']);
+unset($_SESSION['username']);
 // Find home page for redirect.
 $redirect_page = preg_replace('/public\/logout.php/', 'index.php', $_SERVER["REQUEST_URI"]);
 // Redirect user to home page to let them know they have logged out.

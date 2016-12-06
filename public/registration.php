@@ -23,6 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
             if (addUser($email, $password, $firstname, $lastname, $zipcode, $birthday)) {
                 session_start();
                 $_SESSION["isLoggedIn"] = true;
+                global $email;
+                $_SESSION["username"] = $email;
 // Redirect user to profile page.
                 $redirect_page = preg_replace('/registration.php/', 'profile.php', $_SERVER["REQUEST_URI"]);
                 header("Location: " . $redirect_page);
